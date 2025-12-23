@@ -1,0 +1,23 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  --wood-gradient: linear-gradient(
+    180deg,
+    rgba(51, 41, 50, 1) 0%,
+    rgba(37, 25, 41, 1) 100%
+  );
+
+  /* Fonts */
+  /* Effects */
+}
+/* Figma Color Variables of your File */
+:root,
+[data-variable-collection-mode="mode-1"] {
+  /* mode-1 */
+  --wood-light: #332932;
+  --white: #d9d9d9;
+  --celadon: #83c9b3;
+  --tea-green: #b6d9ad;
+  --blossom: #f6b0bb;
+  --wood-dark: #251929;
+}
