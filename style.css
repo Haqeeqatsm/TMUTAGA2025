@@ -1,0 +1,388 @@
+.about-us {
+  	position: relative;
+  	background: linear-gradient(180deg, #332932, #251929);
+  	width: 100%;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	isolation: isolate;
+  	gap: 0.625rem;
+  	text-align: left;
+  	font-size: 4rem;
+  	color: #fff;
+  	font-family: Mestiza-Bold;
+}
+.scroll-bar-icon {
+  	width: 1.719rem;
+  	height: 3.106rem;
+  	position: absolute;
+  	margin: 0 !important;
+  	top: 1.375rem;
+  	left: 85.375rem;
+  	z-index: 0;
+}
+.logo-icon {
+  	width: 76.375rem;
+  	height: 18.75rem;
+  	position: relative;
+  	z-index: 1;
+}
+.navbar {
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 3.312rem;
+  	z-index: 2;
+  	text-align: center;
+  	font-size: 2.25rem;
+  	color: #9bd7ba;
+  	font-family: 'Kaisei Opti';
+}
+.about-us2 {
+  	height: 3.25rem;
+  	width: 15rem;
+  	position: relative;
+  	color: #c1e0af;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.awards {
+  	height: 3.25rem;
+  	width: 15rem;
+  	position: relative;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.theses {
+  	height: 3.25rem;
+  	width: 15rem;
+  	position: relative;
+  	color: #dcb3ba;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.about-hero-container {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 1.875rem;
+  	z-index: 3;
+}
+.component-arches-container {
+  	align-self: stretch;
+  	overflow: hidden;
+  	display: flex;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 1.25rem;
+}
+.component-smallarch-icon {
+  	height: 14.913rem;
+  	width: 12.513rem;
+  	position: relative;
+  	object-fit: contain;
+}
+.component-smallarch-icon2 {
+  	height: 14.913rem;
+  	width: 12.513rem;
+  	position: relative;
+}
+.about-hero {
+  	width: 73.625rem;
+  	height: 55.25rem;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0.125rem;
+  	margin-top: -9.375rem;
+  	position: relative;
+}
+.h1 {
+  	align-self: stretch;
+  	height: 6.25rem;
+  	position: relative;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.about-hero-text {
+  	align-self: stretch;
+  	height: 48.875rem;
+  	display: flex;
+  	align-items: flex-start;
+  	gap: 2.125rem;
+  	font-size: 2rem;
+  	font-family: Civane-NorBoo;
+}
+.body {
+  	height: 48.875rem;
+  	width: 45.125rem;
+  	position: relative;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.about-hero-text-child {
+  	height: 26rem;
+  	width: 26rem;
+  	position: relative;
+  	background-color: #d9d9d9;
+}
+.about-goal {
+  	align-self: stretch;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 0rem 1.875rem;
+  	gap: 3.125rem;
+  	z-index: 4;
+  	text-align: center;
+  	font-size: 3rem;
+}
+.component-leaf-down {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 0.625rem;
+}
+.leaf-1-icon {
+  	width: 3.631rem;
+  	height: 3.631rem;
+  	position: relative;
+}
+.leaf-3-icon {
+  	width: 3.394rem;
+  	height: 3.613rem;
+  	position: relative;
+}
+.about-vision {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 0.625rem;
+}
+.longframe-icon {
+  	width: 28.756rem;
+  	height: 4.631rem;
+  	position: relative;
+  	object-fit: contain;
+}
+.h2 {
+  	position: relative;
+}
+.caption {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 1.5rem;
+  	font-family: Civane-NorBoo;
+}
+.component-pillar-icon {
+  	width: 3.875rem;
+  	position: relative;
+  	max-height: 100%;
+}
+.leaf-4-icon {
+  	width: 3.313rem;
+  	height: 3.313rem;
+  	position: relative;
+}
+.leaf-5-icon {
+  	width: 2.913rem;
+  	height: 3.163rem;
+  	position: relative;
+}
+.leaf-6-icon {
+  	width: 1.719rem;
+  	height: 3.106rem;
+  	position: relative;
+}
+.component-divider {
+  	align-self: stretch;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 6.25rem 0rem;
+  	gap: 0.312rem;
+  	z-index: 5;
+}
+.component-gate-icon {
+  	flex: 1;
+  	position: relative;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.about-profile {
+  	align-self: stretch;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 3.125rem 1.875rem;
+  	gap: 3.125rem;
+  	z-index: 6;
+}
+.component-left-corner-containe {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: space-between;
+  	gap: 1.25rem;
+}
+.component-tinyarch-icon {
+  	width: 6.013rem;
+  	height: 6.013rem;
+  	position: relative;
+  	object-fit: contain;
+}
+.about-img-profile {
+  	height: 18.75rem;
+  	width: 18.75rem;
+  	position: relative;
+  	border-radius: 50%;
+  	background-color: #d9d9d9;
+}
+.bar-icon {
+  	align-self: stretch;
+  	width: 5.181rem;
+  	position: relative;
+  	max-height: 100%;
+}
+.about-mission2 {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+}
+.about-profile-discription {
+  	width: 44.625rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	gap: 0.625rem;
+}
+.about-profile-name {
+  	display: flex;
+  	align-items: flex-end;
+  	gap: 0.625rem;
+}
+.h3 {
+  	position: relative;
+  	font-size: 3rem;
+  	font-family: Civane-NorBoo;
+}
+.h23 {
+  	position: relative;
+  	font-size: 3rem;
+}
+.body2 {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 2rem;
+  	font-family: Civane-NorBoo;
+}
+.about-profile2 {
+  	align-self: stretch;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 3.125rem 1.875rem;
+  	gap: 3.125rem;
+  	z-index: 7;
+}
+.component-tinyarch-icon3 {
+  	width: 6.013rem;
+  	height: 6.013rem;
+  	position: relative;
+}
+.about-associates {
+  	align-self: stretch;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 3.125rem 1.875rem;
+  	gap: 3.125rem;
+  	z-index: 8;
+}
+.about-associates-child {
+  	height: 29.5rem;
+  	width: 29.5rem;
+  	position: relative;
+  	border-radius: 10px;
+  	background-color: #d9d9d9;
+}
+.component-border-icon {
+  	align-self: stretch;
+  	width: 6.713rem;
+  	position: relative;
+  	max-height: 100%;
+}
+.about-associates-grid {
+  	display: grid;
+  	grid-template-rows: 1fr 1fr;
+  	grid-template-columns: 1fr 1fr;
+  	justify-content: start;
+  	align-content: start;
+  	gap: 0rem;
+  	font-size: 3rem;
+}
+.about-production-associates {
+  	position: absolute;
+  	top: 0rem;
+  	left: 41.375rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.625rem;
+}
+.h25 {
+  	align-self: stretch;
+  	position: relative;
+}
+.about-marketing-associates {
+  	position: absolute;
+  	top: 0rem;
+  	left: 22.625rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	gap: 0.625rem;
+}
+.about-multimedia-associates {
+  	position: absolute;
+  	top: 20.938rem;
+  	left: 22.625rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	gap: 0.625rem;
+}
+.about-creative-associates {
+  	position: absolute;
+  	top: 0rem;
+  	left: 0rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.625rem;
+}
+.about-editorial-associates {
+  	position: absolute;
+  	top: 20.938rem;
+  	left: 0rem;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.625rem;
+}
+
