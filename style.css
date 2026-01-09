@@ -1,3 +1,261 @@
+/*Root Styles*/
+:root {
+  --text-color-main: #ffffff;
+}
+
+/* Headings */
+h1 {
+  font-family: "Mestiza", serif;
+  font-size: 64px;
+  color: var(--text-color-main);
+}
+
+h2 {
+  font-family: "Mestiza", serif;
+  font-size: 48px;
+  color: var(--text-color-main);
+}
+
+h3 {
+  font-family: "civane-normal", sans-serif;
+  font-size: 48px;
+  color: var(--text-color-main);
+}
+
+/* Body text */
+body {
+  font-family: "civane-normal", sans-serif;
+  font-size: 32px;
+  color: var(--text-color-main);
+}
+
+/* Caption / small text */
+.caption {
+  font-family: "civane-normal", sans-serif;
+  font-size: 24px;
+}
+
+/*Index Section */
+
+.homepage-base {
+  	width: 100%;
+  	height: 2756px;
+  	position: relative;
+  	background: linear-gradient(180deg, #332932, #251929);
+  	overflow: hidden;
+  	text-align: center;
+  	color: #fff;
+}
+.title {
+  	position: absolute;
+  	top: 18px;
+  	left: 354px;
+  	display: inline-block;
+  	color: #d9d9d9;
+  	width: 731px;
+  	height: 152px;
+  	flex-shrink: 0;
+}
+.background-title-icon {
+  	position: absolute;
+  	top: -9px;
+  	left: 183px;
+  	width: 1076px;
+  	height: 264px;
+  	opacity: 0.16;
+  	flex-shrink: 0;
+}
+.body {
+  	position: absolute;
+  	top: 1193px;
+  	left: 584px;
+  	text-align: right;
+  	display: inline-block;
+  	width: 783px;
+  	height: 434px;
+  	flex-shrink: 0;
+}
+.component-socials {
+  	position: absolute;
+  	top: 2475px;
+  	left: 367px;
+  	width: 707px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	gap: 11px;
+  	flex-shrink: 0;
+  	color: #d9d9d9;
+}
+.social-icons {
+  	width: 434px;
+  	height: 74px;
+  	position: relative;
+}
+.instagram {
+  	position: absolute;
+  	top: 14px;
+  	left: 0px;
+  	width: 48px;
+  	height: 48px;
+  	cursor: pointer;
+}
+.instagram2 {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	overflow: hidden;
+}
+.vector-icon {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.vector-icon2 {
+  	position: absolute;
+  	height: 51.46%;
+  	width: 51.46%;
+  	top: 24.32%;
+  	right: 24.23%;
+  	bottom: 24.23%;
+  	left: 24.32%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.vector-icon3 {
+  	position: absolute;
+  	height: 12.08%;
+  	width: 12.08%;
+  	top: 17.3%;
+  	right: 17.21%;
+  	bottom: 70.61%;
+  	left: 70.7%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.tiktok {
+  	position: absolute;
+  	top: 14px;
+  	left: 120px;
+  	width: 48px;
+  	height: 48px;
+  	overflow: hidden;
+}
+.vector-icon4 {
+  	position: absolute;
+  	height: 100%;
+  	width: 85.42%;
+  	top: 0%;
+  	right: 6.25%;
+  	bottom: 0%;
+  	left: 8.33%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.linkedin {
+  	position: absolute;
+  	top: 14px;
+  	left: 240px;
+  	width: 48px;
+  	height: 48px;
+  	overflow: hidden;
+}
+.email-icon {
+  	position: absolute;
+  	top: 0px;
+  	left: 360px;
+  	width: 74px;
+  	height: 74px;
+}
+.component-gradient-line {
+  	position: absolute;
+  	top: 1694.5px;
+  	left: -3.5px;
+  	background: linear-gradient(90deg, #b6d9ad, #83c9b3 24.04%, #f6b0bb 94.71%) border-box;
+  	border-top: 7px solid transparent;
+  	box-sizing: border-box;
+  	width: 1319px;
+  	height: 7px;
+  	flex-shrink: 0;
+}
+.component-gallery {
+  	position: absolute;
+  	top: 1726px;
+  	left: 0px;
+  	width: 1732px;
+  	height: 656px;
+  	flex-shrink: 0;
+  	color: #000;
+}
+.social-media-post-1 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #fff;
+  	width: 564px;
+  	height: 656px;
+  	overflow: hidden;
+}
+.social-media-post {
+  	position: absolute;
+  	top: 300px;
+  	left: 79px;
+  	display: inline-block;
+  	width: 352px;
+  	height: 43px;
+}
+.social-media-post-2 {
+  	position: absolute;
+  	top: 0px;
+  	left: 584px;
+  	background-color: #fff;
+  	width: 564px;
+  	height: 656px;
+  	overflow: hidden;
+}
+.social-media-post-3 {
+  	position: absolute;
+  	top: 0px;
+  	left: 1168px;
+  	background-color: #fff;
+  	width: 564px;
+  	height: 656px;
+  	overflow: hidden;
+}
+.scroll-bar-icon {
+  	position: absolute;
+  	top: 24px;
+  	left: 1395px;
+  	width: 37.5px;
+  	height: 59.7px;
+  	flex-shrink: 0;
+}
+.component-video-icon {
+  	position: absolute;
+  	top: 243px;
+  	left: -370px;
+  	width: 2181px;
+  	height: 580px;
+  	flex-shrink: 0;
+}
+
+
+
+/* About Us Section */
 .about-us,
 .about-us * {
   box-sizing: border-box;
@@ -43,14 +301,9 @@
 
 }
 .hero-title {
-  color: #ffffff;
   text-align: left;
-  font-family: "MestizaBold-Regular", sans-serif;
-  font-size: 64px;
-  font-weight: 400;
   position: relative;
   align-self: stretch;
-  height: 100px;
 }
 .about-hero-text {
   display: flex;
@@ -63,11 +316,7 @@
   position: relative;
 }
 .hero-body {
-  color: #ffffff;
   text-align: left;
-  font-family: "CivaneNorBoo-Undefined", sans-serif;
-  font-size: 32px;
-  font-weight: 400;
   position: relative;
 }
 .about-img-groupPhoto {
@@ -108,23 +357,6 @@
   transform: rotate(180deg);
   padding-bottom: 5%;
 }
-.h-2 {
-  color: #ffffff;
-  text-align: center;
-  font-family: "MestizaBold-Regular", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  position: relative;
-}
-.caption {
-  color: #ffffff;
-  text-align: center;
-  font-family: "CivaneNorBoo-Undefined", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
-  align-self: stretch;
-}
 .component-pillar {
   flex-shrink: 0;
   width: 62px;
@@ -164,26 +396,25 @@
   align-items: flex-start;
   justify-content: space-between;
   align-self: stretch;
+}
 
+.component-right-corner-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  transform: scaleX(-1);
 }
+
+
 .component-tiny-arch {
-  flex-shrink: 0;
-  width: 96.18px;
-  height: 96.18px;
-  position: relative;
-  transform-origin: 0 0;
-  transform: rotate(0deg) scale(-1, 1);
-  overflow: hidden;
+  height: 5%;
 }
-.glass10 {
-  width: 99.99%;
-  height: 100%;
-  position: absolute;
-  right: -0.01%;
-  left: 0.02%;
-  bottom: 0.01%;
-  top: -0.01%;
-  overflow: visible;
+
+.component-tiny-arch-top {
+  height: 5%;
+  transform: scaleY(-1);
 }
 .component-tiny-arch2 {
   flex-shrink: 0;
@@ -193,16 +424,6 @@
   transform-origin: 0 0;
   transform: rotate(-180deg) scale(1, 1);
   overflow: hidden;
-}
-.glass11 {
-  width: 99.99%;
-  height: 100%;
-  position: absolute;
-  right: -0.01%;
-  left: 0.02%;
-  bottom: 0.01%;
-  top: -0.01%;
-  overflow: visible;
 }
 .about-img-profile {
   background: #d9d9d9;
@@ -221,16 +442,7 @@
   overflow: hidden;
   aspect-ratio: 82.88/492;
 }
-.wood16 {
-  width: 99.98%;
-  height: 100%;
-  position: absolute;
-  right: 0.02%;
-  left: 0%;
-  bottom: 0%;
-  top: 0%;
-  overflow: visible;
-}
+
 .about-profile-discription {
   display: flex;
   flex-direction: column;
@@ -249,39 +461,6 @@
   justify-content: flex-start;
 
 }
-.h-1 {
-  color: #ffffff;
-  text-align: left;
-  font-family: "MestizaBold-Regular", sans-serif;
-  font-size: 64px;
-  font-weight: 400;
-  position: relative;
-}
-.h-3 {
-  color: #ffffff;
-  text-align: left;
-  font-family: "CivaneNorBoo-Undefined", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  position: relative;
-}
-.h-22 {
-  color: #ffffff;
-  text-align: left;
-  font-family: "MestizaBold-Regular", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  position: relative;
-}
-.body {
-  color: #ffffff;
-  text-align: left;
-  font-family: "CivaneNorBoo-Undefined", sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  position: relative;
-  align-self: stretch;
-}
 .component-bar {
   align-self: stretch;
   flex-shrink: 0;
@@ -289,16 +468,6 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 82.88/492;
-}
-.wood17 {
-  width: 99.98%;
-  height: 100%;
-  position: absolute;
-  right: 0.02%;
-  left: 0%;
-  bottom: 0%;
-  top: 0%;
-  overflow: visible;
 }
 .component-right-corner-container {
   display: flex;
@@ -308,77 +477,23 @@
   align-self: stretch;
 
 }
-.component-tiny-arch3 {
-  flex-shrink: 0;
-  width: 96.18px;
-  height: 96.18px;
-  position: relative;
-  overflow: hidden;
-}
-.glass12 {
-  width: 99.99%;
-  height: 100%;
-  position: absolute;
-  right: -0.01%;
-  left: 0.02%;
-  bottom: 0.01%;
-  top: -0.01%;
-  overflow: visible;
-}
-.component-tiny-arch4 {
-  flex-shrink: 0;
-  width: 96.18px;
-  height: 96.18px;
-  position: relative;
-  transform-origin: 0 0;
-  transform: rotate(0deg) scale(1, -1);
-  overflow: hidden;
-}
-.glass13 {
-  width: 99.99%;
-  height: 100%;
-  position: absolute;
-  right: -0.01%;
-  left: 0.02%;
-  bottom: 0.01%;
-  top: -0.01%;
-  overflow: visible;
-}
 .about-associates {
-  padding: 50px 30px 50px 30px;
+  padding: 5% 3% 5% 3%;
   display: flex;
   flex-direction: row;
-  gap: 50px;
   align-items: center;
   justify-content: center;
   align-self: stretch;
+  gap: 5%;
 
 }
-.rectangle-2 {
+.img-associates {
   background: #d9d9d9;
   border-radius: 10px;
   flex-shrink: 0;
-  width: 472px;
-  height: 472px;
+  width: 30vw;
+  height: 60vh;
   position: relative;
-}
-.component-border {
-  align-self: stretch;
-  flex-shrink: 0;
-  width: 107.35px;
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 107.35/667;
-}
-.wood18 {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  right: 0%;
-  left: 0%;
-  bottom: 0%;
-  top: 0%;
-  overflow: visible;
 }
 .about-associates-container {
   display: flex;
@@ -405,15 +520,6 @@
   position: relative;
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;
-}
-.h-23 {
-  color: #ffffff;
-  text-align: left;
-  font-family: "MestizaBold-Regular", sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  position: relative;
-  align-self: stretch;
 }
 .about-marketing-associates {
   display: flex;
