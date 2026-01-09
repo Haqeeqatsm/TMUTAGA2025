@@ -3,6 +3,11 @@
   --text-color-main: #ffffff;
 }
 
+html {
+  background: var(--wood-gradient);
+  width: 100%;
+}
+
 /* Headings */
 h1 {
   font-family: "Mestiza", serif;
@@ -27,6 +32,8 @@ body {
   font-family: "civane-normal", sans-serif;
   font-size: 32px;
   color: var(--text-color-main);
+  background-color: transparent;
+
 }
 
 /* Caption / small text */
@@ -35,13 +42,70 @@ body {
   font-size: 24px;
 }
 
+/*Custom scrollbar*/
+
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--wood-gradient);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: url("media/scrollbar.svg"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: transparent;
+}
+
+/* Navbar Styles */
+.navbar {
+  font-size: 36px;
+  font-family: "civane-normal", sans-serif;
+  background: transparent;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;       /* default white */
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;    /* top/bottom padding, left/right handled by spacing */
+}
+
+/* Hover colors */
+.nav-aboutus:hover { color: #c1e0af; }
+.nav-awards:hover { color: #9bd7ba; }
+.nav-donors:hover { color: #9bd7ba; }
+.nav-theses:hover { color: #dcb3ba; }
+.nav-archive:hover { color: #dcb3ba; }
+
+/* Hamburger icon */
+.navbar-toggler {
+  border: none;
+  background: #9bd7ba;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    font-size: 24px;
+    padding: 0.5rem 1rem;
+  }
+}
+
 /*Index Section */
 
 .homepage-base {
   	width: 100%;
   	height: 2756px;
   	position: relative;
-  	background: linear-gradient(180deg, #332932, #251929);
   	overflow: hidden;
   	text-align: center;
   	color: #fff;
@@ -253,15 +317,13 @@ body {
   	flex-shrink: 0;
 }
 
-
-
 /* About Us Section */
 .about-us,
 .about-us * {
   box-sizing: border-box;
 }
 .about-us-bg {
-  background: var(--wood-gradient,  linear-gradient(180deg, rgba(51, 41, 50, 1) 0%, rgba(37, 25, 41, 1) 100%));
+  /*background: var(--wood-gradient);*/
   margin: 0px;
 }
 .about-us {
@@ -327,7 +389,7 @@ body {
   position: relative;
 }
 .about-goal {
-  padding: 0px 30px 0px 30px;
+  padding: 0px 10% 0px 10%;
   display: flex;
   flex-direction: row;
   gap: 10%;
@@ -339,7 +401,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: stretch;
+  height: 40vh;
 }
 .about-vision {
   display: flex;
@@ -370,6 +432,9 @@ body {
   gap: 15%;
   align-items: center;
   justify-content: center;
+}
+.about-goal-body {
+  text-align: center;
 }
 .component-divider {
   padding: 5% 0 5% 0;
@@ -407,13 +472,7 @@ body {
   transform: scaleX(-1);
 }
 
-
-.component-tiny-arch {
-  height: 5%;
-}
-
 .component-tiny-arch-top {
-  height: 5%;
   transform: scaleY(-1);
 }
 .component-tiny-arch2 {
@@ -435,12 +494,9 @@ body {
   aspect-ratio: 1;
 }
 .bar {
-  align-self: stretch;
+  align-self: center;
   flex-shrink: 0;
-  width: 82.88px;
   position: relative;
-  overflow: hidden;
-  aspect-ratio: 82.88/492;
 }
 
 .about-profile-discription {
