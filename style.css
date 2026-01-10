@@ -100,8 +100,36 @@ body {
   }
 }
 
-/*Index Section */
+/*Text Logo*/
+.text-logo {
+  display: grid;
+  place-items: center;
+}
 
+/* Back leather text */
+.logo-back {
+  grid-area: 1 / 1;
+  font-family: "leather", serif;
+  font-size: 250px;
+  color: #0c000b;
+  opacity: 0.20;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Front mestiza text */
+.logo-front {
+  grid-area: 1 / 1;
+  font-family: "mestiza", serif;
+  font-weight: 700;
+  font-size: 132px;
+  color: white;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+
+/*Index Section */
 .homepage-base {
   	width: 100%;
   	height: 2756px;
