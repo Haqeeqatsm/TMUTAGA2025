@@ -3,7 +3,7 @@
   --text-color-main: #ffffff;
 }
 
-html {
+html, body {
   background: var(--wood-gradient);
   width: 100%;
 }
@@ -28,7 +28,7 @@ h3 {
 }
 
 /* Body text */
-body {
+p {
   font-family: "civane-normal", sans-serif;
   font-size: 32px;
   color: var(--text-color-main);
@@ -64,15 +64,34 @@ body {
 .navbar {
   font-size: 36px;
   font-family: "civane-normal", sans-serif;
-  background: transparent;
   padding-left: 15%;
   padding-right: 15%;
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff;       /* default white */
+  color: #ffffff;       
   transition: color 0.3s ease;
-  padding: 0.5rem 0;    /* top/bottom padding, left/right handled by spacing */
+  padding: 0.5rem 0;  
+  display: inline-block;
+  position: relative;
+}
+
+/* Underline */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.35s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover underline */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
 }
 
 /* Hover colors */
@@ -81,6 +100,15 @@ body {
 .nav-donors:hover { color: #9bd7ba; }
 .nav-theses:hover { color: #dcb3ba; }
 .nav-archive:hover { color: #dcb3ba; }
+
+/* Active (clicked) state */
+.navbar-nav .nav-link.active {
+  color: white !important;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
 
 /* Hamburger icon */
 .navbar-toggler {
@@ -100,10 +128,12 @@ body {
   }
 }
 
-/*Text Logo*/
+/* Text Logo */
 .text-logo {
   display: grid;
   place-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Back leather text */
@@ -115,6 +145,7 @@ body {
   opacity: 0.20;
   white-space: nowrap;
   z-index: 1;
+  transform: translate(6px, 6px); /* depth */
 }
 
 /* Front mestiza text */
@@ -128,231 +159,97 @@ body {
   z-index: 2;
 }
 
+/* Gradient layer */
+.logo-gradient {
+  grid-area: 1 / 1;
+  font-family: "mestiza", serif;
+  font-weight: 700;
+  font-size: 132px;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;                     /* hidden by default */
+  z-index: 3;
+  transition: opacity 0.6s ease;  /* fade-in/out */
+  pointer-events: none;
+}
+
+/* Hover fade-in gradient */
+.text-logo:hover .logo-gradient {
+  opacity: 1;
+  animation: gradientMove 3s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 /*Index Section */
-.homepage-base {
-  	width: 100%;
-  	height: 2756px;
-  	position: relative;
-  	overflow: hidden;
-  	text-align: center;
-  	color: #fff;
-}
-.title {
-  	position: absolute;
-  	top: 18px;
-  	left: 354px;
-  	display: inline-block;
-  	color: #d9d9d9;
-  	width: 731px;
-  	height: 152px;
-  	flex-shrink: 0;
-}
-.background-title-icon {
-  	position: absolute;
-  	top: -9px;
-  	left: 183px;
-  	width: 1076px;
-  	height: 264px;
-  	opacity: 0.16;
-  	flex-shrink: 0;
-}
-.body {
-  	position: absolute;
-  	top: 1193px;
-  	left: 584px;
-  	text-align: right;
-  	display: inline-block;
-  	width: 783px;
-  	height: 434px;
-  	flex-shrink: 0;
+.homepage-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .component-socials {
-  	position: absolute;
-  	top: 2475px;
-  	left: 367px;
-  	width: 707px;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	gap: 11px;
-  	flex-shrink: 0;
-  	color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  gap: 3vh;
 }
 .social-icons {
-  	width: 434px;
-  	height: 74px;
-  	position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 45%;
+  justify-content: center;
 }
-.instagram {
-  	position: absolute;
-  	top: 14px;
-  	left: 0px;
-  	width: 48px;
-  	height: 48px;
-  	cursor: pointer;
+
+.icons {
+  height: 30%;
 }
-.instagram2 {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	top: 0%;
-  	right: 0%;
-  	bottom: 0%;
-  	left: 0%;
-  	overflow: hidden;
-}
-.vector-icon {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	top: 0%;
-  	right: 0%;
-  	bottom: 0%;
-  	left: 0%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.vector-icon2 {
-  	position: absolute;
-  	height: 51.46%;
-  	width: 51.46%;
-  	top: 24.32%;
-  	right: 24.23%;
-  	bottom: 24.23%;
-  	left: 24.32%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.vector-icon3 {
-  	position: absolute;
-  	height: 12.08%;
-  	width: 12.08%;
-  	top: 17.3%;
-  	right: 17.21%;
-  	bottom: 70.61%;
-  	left: 70.7%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.tiktok {
-  	position: absolute;
-  	top: 14px;
-  	left: 120px;
-  	width: 48px;
-  	height: 48px;
-  	overflow: hidden;
-}
-.vector-icon4 {
-  	position: absolute;
-  	height: 100%;
-  	width: 85.42%;
-  	top: 0%;
-  	right: 6.25%;
-  	bottom: 0%;
-  	left: 8.33%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.linkedin {
-  	position: absolute;
-  	top: 14px;
-  	left: 240px;
-  	width: 48px;
-  	height: 48px;
-  	overflow: hidden;
-}
-.email-icon {
-  	position: absolute;
-  	top: 0px;
-  	left: 360px;
-  	width: 74px;
-  	height: 74px;
-}
+
 .component-gradient-line {
-  	position: absolute;
-  	top: 1694.5px;
-  	left: -3.5px;
-  	background: linear-gradient(90deg, #b6d9ad, #83c9b3 24.04%, #f6b0bb 94.71%) border-box;
-  	border-top: 7px solid transparent;
-  	box-sizing: border-box;
-  	width: 1319px;
-  	height: 7px;
-  	flex-shrink: 0;
+  background: linear-gradient(90deg, #b6d9ad, #83c9b3 24.04%, #f6b0bb 94.71%) border-box;
+  border-top: 7px solid transparent;
+  box-sizing: border-box;
+  width: 70vw;
 }
 .component-gallery {
-  	position: absolute;
-  	top: 1726px;
-  	left: 0px;
-  	width: 1732px;
-  	height: 656px;
-  	flex-shrink: 0;
-  	color: #000;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  align-items: center;
 }
 .social-media-post-1 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	background-color: #fff;
-  	width: 564px;
-  	height: 656px;
-  	overflow: hidden;
+
+  background-color: #fff;
+  width: 564px;
+  height: 656px;
+  overflow: hidden;
 }
 .social-media-post {
-  	position: absolute;
-  	top: 300px;
-  	left: 79px;
-  	display: inline-block;
-  	width: 352px;
-  	height: 43px;
+
+  display: inline-block;
+  width: 352px;
+  height: 43px;
 }
-.social-media-post-2 {
-  	position: absolute;
-  	top: 0px;
-  	left: 584px;
-  	background-color: #fff;
-  	width: 564px;
-  	height: 656px;
-  	overflow: hidden;
-}
-.social-media-post-3 {
-  	position: absolute;
-  	top: 0px;
-  	left: 1168px;
-  	background-color: #fff;
-  	width: 564px;
-  	height: 656px;
-  	overflow: hidden;
-}
-.scroll-bar-icon {
-  	position: absolute;
-  	top: 24px;
-  	left: 1395px;
-  	width: 37.5px;
-  	height: 59.7px;
-  	flex-shrink: 0;
-}
-.component-video-icon {
-  	position: absolute;
-  	top: 243px;
-  	left: -370px;
-  	width: 2181px;
-  	height: 580px;
-  	flex-shrink: 0;
+
+.home-instagram-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
 }
 
 /* About Us Section */
 .about-us,
 .about-us * {
   box-sizing: border-box;
-}
-.about-us-bg {
-  /*background: var(--wood-gradient);*/
-  margin: 0px;
 }
 .about-us {
   display: flex;
