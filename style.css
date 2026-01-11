@@ -195,6 +195,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 10% 5% 0 5%;
 }
 .component-socials {
   display: flex;
@@ -244,6 +245,10 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1vh;
+}
+
+.home-hero-text{
+  text-align: right;
 }
 
 /* About Us Section */
