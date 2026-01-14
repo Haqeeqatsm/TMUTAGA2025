@@ -547,3 +547,284 @@ p {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
 }
+
+/* Archive Section */
+
+.archive {
+  	width: 100%;
+  	height: 3385px;
+  	position: relative;
+  	background: linear-gradient(180deg, #332932, #251929);
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 32px;
+  	color: #fff;
+  	font-family: Mestiza;
+}
+
+.journal-archive {
+  	position: absolute;
+  	top: 334px;
+  	left: 485px;
+  	font-size: 64px;
+  	color: #d9d9d9;
+  	text-align: center;
+  	flex-shrink: 0;
+}
+.disclaimer-in-2022 {
+  	position: absolute;
+  	top: 751px;
+  	left: calc(50% - 554px);
+  	font-family: Civane;
+  	color: #d9d9d9;
+  	display: inline-block;
+  	width: 1108px;
+  	height: 155px;
+  	flex-shrink: 0;
+}
+.div {
+  	position: absolute;
+  	top: 1009px;
+  	left: 67px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.hover {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #f6b0bb;
+  	width: 227px;
+  	height: 321px;
+}
+.bottom-shadow {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	background-color: #f6b0bb;
+}
+.cover-icon {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 227px;
+  	height: 321px;
+  	object-fit: cover;
+}
+.div2 {
+  	position: absolute;
+  	top: 1009px;
+  	left: 427px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div3 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 227px;
+  	height: 321px;
+  	overflow: hidden;
+}
+.cover-icon2 {
+  	position: absolute;
+  	top: 0px;
+  	left: -11px;
+  	width: 248px;
+  	height: 321px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.div4 {
+  	position: absolute;
+  	top: 1009px;
+  	left: 787px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div5 {
+  	position: absolute;
+  	top: 1009px;
+  	left: 1147px;
+  	width: 228px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.frame-icon2 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 228px;
+  	height: 321px;
+  	object-fit: cover;
+}
+.div6 {
+  	position: absolute;
+  	top: 1459px;
+  	left: 67px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div7 {
+  	position: absolute;
+  	top: 1459px;
+  	left: 427px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div8 {
+  	position: absolute;
+  	top: 1459px;
+  	left: 787px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div9 {
+  	position: absolute;
+  	top: 1459px;
+  	left: 1147px;
+  	width: 228px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div10 {
+  	position: absolute;
+  	top: 1909px;
+  	left: 67px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div11 {
+  	position: absolute;
+  	top: 1909px;
+  	left: 427px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div12 {
+  	position: absolute;
+  	top: 1909px;
+  	left: 787px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div13 {
+  	position: absolute;
+  	top: 1909px;
+  	left: 1147px;
+  	width: 228px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div14 {
+  	position: absolute;
+  	top: 2359px;
+  	left: 67px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div15 {
+  	position: absolute;
+  	top: 2359px;
+  	left: 427px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div16 {
+  	position: absolute;
+  	top: 2359px;
+  	left: 787px;
+  	width: 227px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.div17 {
+  	position: absolute;
+  	top: 2359px;
+  	left: 1147px;
+  	width: 229px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.frame-icon14 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 229px;
+  	height: 321px;
+  	object-fit: cover;
+}
+.div18 {
+  	position: absolute;
+  	top: 2828px;
+  	left: 294px;
+  	width: 338px;
+  	height: 385px;
+  	flex-shrink: 0;
+}
+.b17 {
+  	position: absolute;
+  	top: 343px;
+  	left: 133px;
+}
+.hover17 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #f6b0bb;
+  	width: 338px;
+  	height: 321px;
+}
+.frame-icon15 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 338px;
+  	height: 321px;
+  	object-fit: cover;
+}
+.div19 {
+  	position: absolute;
+  	top: 2797px;
+  	left: 905px;
+  	width: 242px;
+  	height: 425px;
+  	flex-shrink: 0;
+}
+.hover18 {
+  	position: absolute;
+  	top: 0px;
+  	left: 7px;
+  	background-color: #f6b0bb;
+  	width: 227px;
+  	height: 361px;
+}
+.b18 {
+  	position: absolute;
+  	top: 383px;
+  	left: 85px;
+}
+.frame-icon16 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 242px;
+  	height: 361px;
+  	object-fit: cover;
+}
+
