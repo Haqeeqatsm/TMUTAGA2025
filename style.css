@@ -13,18 +13,21 @@ h1 {
   font-family: "Mestiza", serif;
   font-size: 64px;
   color: var(--text-color-main);
+  margin-bottom: 0;
 }
 
 h2 {
   font-family: "Mestiza", serif;
   font-size: 48px;
   color: var(--text-color-main);
+  margin-bottom: 0;
 }
 
 h3 {
   font-family: "civane-normal", sans-serif;
   font-size: 48px;
   color: var(--text-color-main);
+  margin-bottom: 0;
 }
 
 /* Body text */
@@ -32,14 +35,17 @@ p {
   font-family: "civane-normal", sans-serif;
   font-size: 32px;
   color: var(--text-color-main);
-  background-color: transparent;
-
+  margin-bottom: 0;
 }
 
 /* Caption / small text */
 .caption {
   font-family: "civane-normal", sans-serif;
   font-size: 24px;
+}
+
+.dark{
+  color: var(--wood-dark);
 }
 
 /*Custom scrollbar*/
@@ -549,282 +555,66 @@ p {
 }
 
 /* Archive Section */
-
 .archive {
-  	width: 100%;
-  	height: 3385px;
-  	position: relative;
-  	background: linear-gradient(180deg, #332932, #251929);
-  	overflow: hidden;
-  	text-align: left;
-  	font-size: 32px;
-  	color: #fff;
-  	font-family: Mestiza;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding: 5%;
 }
 
-.journal-archive {
-  	position: absolute;
-  	top: 334px;
-  	left: 485px;
-  	font-size: 64px;
-  	color: #d9d9d9;
-  	text-align: center;
-  	flex-shrink: 0;
+/*theses Section */
+.theses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10%;
 }
-.disclaimer-in-2022 {
-  	position: absolute;
-  	top: 751px;
-  	left: calc(50% - 554px);
-  	font-family: Civane;
-  	color: #d9d9d9;
-  	display: inline-block;
-  	width: 1108px;
-  	height: 155px;
-  	flex-shrink: 0;
+.theses-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  text-align: center;
+  padding-top: 5%;
 }
-.div {
-  	position: absolute;
-  	top: 1009px;
-  	left: 67px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
+.theses-preview {
+  display: flex;
+  align-items: flex-end;
+  padding: 3% 15%;
 }
-.hover {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	background-color: #f6b0bb;
-  	width: 227px;
-  	height: 321px;
+.theses-container {
+  width: 100%;
+  border-radius: 30px;
+  background: radial-gradient(92.19% 91.88% at 50.04% 50%, #d9d9d9, #332932);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5% 10%;
+  justify-content: space-between;
 }
-.bottom-shadow {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	top: 0%;
-  	right: 0%;
-  	bottom: 0%;
-  	left: 0%;
-  	background-color: #f6b0bb;
+.theses-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex-shrink: 0;
+  width: 65%;
 }
-.cover-icon {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 227px;
-  	height: 321px;
-  	object-fit: cover;
+.theses-button {
+  width: 15vw;
+  border-radius: 6px;
+  background-color: #332932;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2%;
 }
-.div2 {
-  	position: absolute;
-  	top: 1009px;
-  	left: 427px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
+.theses-glass {
+  height: 291px;
+  width: 291px;
+  object-fit: contain;
+  flex-shrink: 0;
+  z-index: 2;
 }
-.div3 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 227px;
-  	height: 321px;
-  	overflow: hidden;
-}
-.cover-icon2 {
-  	position: absolute;
-  	top: 0px;
-  	left: -11px;
-  	width: 248px;
-  	height: 321px;
-  	object-fit: cover;
-  	flex-shrink: 0;
-}
-.div4 {
-  	position: absolute;
-  	top: 1009px;
-  	left: 787px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div5 {
-  	position: absolute;
-  	top: 1009px;
-  	left: 1147px;
-  	width: 228px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.frame-icon2 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 228px;
-  	height: 321px;
-  	object-fit: cover;
-}
-.div6 {
-  	position: absolute;
-  	top: 1459px;
-  	left: 67px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div7 {
-  	position: absolute;
-  	top: 1459px;
-  	left: 427px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div8 {
-  	position: absolute;
-  	top: 1459px;
-  	left: 787px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div9 {
-  	position: absolute;
-  	top: 1459px;
-  	left: 1147px;
-  	width: 228px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div10 {
-  	position: absolute;
-  	top: 1909px;
-  	left: 67px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div11 {
-  	position: absolute;
-  	top: 1909px;
-  	left: 427px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div12 {
-  	position: absolute;
-  	top: 1909px;
-  	left: 787px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div13 {
-  	position: absolute;
-  	top: 1909px;
-  	left: 1147px;
-  	width: 228px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div14 {
-  	position: absolute;
-  	top: 2359px;
-  	left: 67px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div15 {
-  	position: absolute;
-  	top: 2359px;
-  	left: 427px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div16 {
-  	position: absolute;
-  	top: 2359px;
-  	left: 787px;
-  	width: 227px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.div17 {
-  	position: absolute;
-  	top: 2359px;
-  	left: 1147px;
-  	width: 229px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.frame-icon14 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 229px;
-  	height: 321px;
-  	object-fit: cover;
-}
-.div18 {
-  	position: absolute;
-  	top: 2828px;
-  	left: 294px;
-  	width: 338px;
-  	height: 385px;
-  	flex-shrink: 0;
-}
-.b17 {
-  	position: absolute;
-  	top: 343px;
-  	left: 133px;
-}
-.hover17 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	background-color: #f6b0bb;
-  	width: 338px;
-  	height: 321px;
-}
-.frame-icon15 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 338px;
-  	height: 321px;
-  	object-fit: cover;
-}
-.div19 {
-  	position: absolute;
-  	top: 2797px;
-  	left: 905px;
-  	width: 242px;
-  	height: 425px;
-  	flex-shrink: 0;
-}
-.hover18 {
-  	position: absolute;
-  	top: 0px;
-  	left: 7px;
-  	background-color: #f6b0bb;
-  	width: 227px;
-  	height: 361px;
-}
-.b18 {
-  	position: absolute;
-  	top: 383px;
-  	left: 85px;
-}
-.frame-icon16 {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	width: 242px;
-  	height: 361px;
-  	object-fit: cover;
-}
-
