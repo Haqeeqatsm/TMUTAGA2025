@@ -1,20 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //text logo click
+
+  /* ---------------- LOGO ---------------- */
   const logo = document.querySelector(".text-logo");
   const front = document.querySelector(".logo-front");
 
-  if (!logo || !front) return;
+  if (logo && front) {
+    logo.addEventListener("click", () => {
+      front.style.color = "white";
+      front.style.background = "none";
 
-  logo.addEventListener("click", () => {
-    front.style.color = "white";
-    front.style.background = "none";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 150);
+    });
+  }
 
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 150);
-  });
-
-  //navbar
+  /* ---------------- NAVBAR ---------------- */
   const links = document.querySelectorAll(".navbar-nav .nav-link");
 
   links.forEach(link => {
@@ -23,5 +24,104 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
     });
   });
+
+/* ---------------- THESES NAV ---------------- */
+
+const previews = document.querySelectorAll(".theses-preview");
+const nav = document.querySelector(".theses-nav");
+
+const iconMap = {
+  ummeIcon: "ummePreviewContainer",
+  sashaIcon: "sashaPreviewContainer",
+  danielaIcon: "danielaPreviewContainer",
+  jackyIcon: "jackyPreviewContainer",
+  saribIcon: "saribPreviewContainer"
+};
+
+let currentActive = null;
+
+/* ---------------- CLICK TO SCROLL ---------------- */
+Object.keys(iconMap).forEach(iconId => {
+  const icon = document.getElementById(iconId);
+  const target = document.querySelector("." + iconMap[iconId]);
+
+  if (icon && target) {
+    icon.addEventListener("click", () => {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }
+});
+
+/* ---------------- ALIGN NAV ---------------- */
+function alignNav(forceFirst = false) {
+  let closest = null;
+
+  if (forceFirst && previews.length > 0) {
+    closest = previews[0];
+  } else {
+    let closestDistance = Infinity;
+
+    previews.forEach(preview => {
+      const rect = preview.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const distance = Math.abs(center - window.innerHeight / 2);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = preview;
+      }
+    });
+  }
+
+  if (!closest || !nav) return;
+
+  const rect = closest.getBoundingClientRect();
+  const newTop = rect.top + rect.height / 2;
+
+  /* ---------------- FADE ANIMATION ON SWITCH ---------------- */
+  if (closest !== currentActive) {
+    nav.classList.remove("fade-in");
+    nav.classList.add("fade-out");
+
+    setTimeout(() => {
+      nav.style.top = newTop + "px"; // center to preview
+
+      nav.classList.remove("fade-out");
+      nav.classList.add("fade-in");
+
+      setTimeout(() => {
+        nav.classList.remove("fade-in");
+      }, 250);
+
+      currentActive = closest;
+    }, 150);
+  } else {
+    // if same preview, just follow vertically
+    nav.style.top = newTop + "px";
+  }
+
+  /* ---------------- SET ACTIVE ICON ---------------- */
+  Object.keys(iconMap).forEach(id => {
+    document.getElementById(id)?.classList.remove("active");
+  });
+
+  const activeIcon = Object.keys(iconMap).find(
+    key => closest.classList.contains(iconMap[key])
+  );
+
+  if (activeIcon) {
+    document.getElementById(activeIcon).classList.add("active");
+  }
+}
+
+/* ---------------- SCROLL SYNC ---------------- */
+window.addEventListener("scroll", () => alignNav(false));
+
+/* ---------------- SNAP TO CLOSEST ON LOAD ---------------- */
+window.addEventListener("load", () => {
+  // small timeout to ensure DOM and layout are ready
+  setTimeout(() => alignNav(false), 50);
+});
+
 
 });
