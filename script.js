@@ -123,5 +123,40 @@ window.addEventListener("load", () => {
   setTimeout(() => alignNav(false), 50);
 });
 
+/* ---------------- theses glass effect ---------------- */
+document.querySelectorAll(".theses-container").forEach(glass => {
+    glass.addEventListener("mousemove", e => {
+      const rect = glass.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      glass.style.setProperty("--x", x + "%");
+      glass.style.setProperty("--y", y + "%");
+    });
+    glass.addEventListener("mouseleave", () => {
+      glass.style.setProperty("--x", "50%");
+      glass.style.setProperty("--y", "50%");
+    });
+  });
+
+  /* ---------------- BACK TO TOP ---------------- */
+  const backToTop = document.getElementById("backToTop");
+  backToTop.addEventListener("mouseenter", () => {
+    backToTop.classList.remove("clicked");
+  });
+
+  backToTop.addEventListener("click", () => {
+    backToTop.classList.add("clicked");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    backToTop.style.opacity = window.scrollY < 200 ? "0" : "";
+    backToTop.style.pointerEvents = window.scrollY < 200 ? "none" : "auto";
+  });
+
 
 });

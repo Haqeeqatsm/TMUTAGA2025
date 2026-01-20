@@ -1,6 +1,6 @@
 /*Root Styles*/
 :root {
-  --text-color-main: #ffffff;
+  --text-color-main: var(--white);
 }
 
 html, body {
@@ -83,7 +83,7 @@ p {
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff;       
+  color: var(--white);       
   transition: color 0.3s ease;
   padding: 0.5rem 0;  
   display: inline-block;
@@ -117,7 +117,7 @@ p {
 
 /* Active (clicked) state */
 .navbar-nav .nav-link.active {
-  color: white !important;
+  color: var(--white) !important;
 }
 
 .navbar-nav .nav-link.active::after {
@@ -127,7 +127,7 @@ p {
 /* Hamburger icon */
 .navbar-toggler {
   border: none;
-  background: #9bd7ba;
+  background: var(--celadon);
 }
 
 .navbar-toggler-icon {
@@ -146,7 +146,6 @@ p {
 .text-logo {
   display: grid;
   place-items: center;
-  cursor: pointer;
   user-select: none;
 }
 
@@ -168,9 +167,10 @@ p {
   font-family: "mestiza", serif;
   font-weight: 700;
   font-size: 132px;
-  color: white;
+  color: var(--white);
   white-space: nowrap;
   z-index: 2;
+  cursor: pointer;
 }
 
 /* Gradient layer */
@@ -203,6 +203,50 @@ p {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+/*back to top button*/
+.back-to-top {
+  position: fixed;
+  bottom: 2.5vw;
+  right: 2.5vw;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  cursor: pointer;
+  z-index: 200;
+
+  opacity: 0.7;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.back-to-top img {
+  width: 18px;
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+/* hover */
+.back-to-top:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* click state */
+.back-to-top.clicked {
+  opacity: 0.4;
+}
+
 
 /*Index Section */
 .homepage-hero {
@@ -242,14 +286,12 @@ p {
   align-items: center;
 }
 .social-media-post-1 {
-
-  background-color: #fff;
+  background-color: var(--white);
   width: 564px;
   height: 656px;
   overflow: hidden;
 }
 .social-media-post {
-
   display: inline-block;
   width: 352px;
   height: 43px;
@@ -593,16 +635,81 @@ p {
   align-items: flex-end;
   padding: 3% 15%;
 }
+
 .theses-container {
+  position: relative;
   width: 100%;
   border-radius: 30px;
-  background: radial-gradient(92.19% 91.88% at 50.04% 50%, #d9d9d9, #332932);
+
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.25),
+    inset 0 0 25px rgba(255,255,255,0.35);
+
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 5% 10%;
   justify-content: space-between;
+
+  overflow: hidden;
 }
+
+.theses-container::before {
+  content: "";
+  position: absolute;
+  inset: 5%;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      420px circle at var(--x, 50%) var(--y, 50%),
+      rgba(131,201,179,0.35),
+      rgba(182,217,173,0.38),
+      rgba(246,176,187,0.32),
+      transparent 80%
+    );
+
+  filter: blur(60px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.theses-container:hover::before {
+  opacity: 1;
+}
+
+.theses-container::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 29px;
+  z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.65),
+    transparent 40%,
+    transparent 60%,
+    rgba(255,255,255,0.35)
+  );
+
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.theses-container > * {
+  position: relative;
+  z-index: 2;
+}
+
 .theses-text {
   display: flex;
   flex-direction: column;
@@ -613,7 +720,7 @@ p {
 .theses-button {
   width: 15vw;
   border-radius: 6px;
-  background-color: #332932;
+  background-color: var(--wood-light);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -624,7 +731,7 @@ p {
 
 .theses-button p {
   margin: 0;
-  color: white;
+  color: var(--white);
   transition: color 0.4s ease;
 }
 
