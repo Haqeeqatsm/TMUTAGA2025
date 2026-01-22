@@ -1,0 +1,245 @@
+/* Timeline Circular Carousel Styles */
+
+/* Hide radio buttons */
+input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Timeline wrapper to control page height */
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(var(--radius, 20vw) + 10rem);
+    overflow: hidden;
+    margin: 5rem 0 0;
+}
+
+.cards-container {
+    --base-rotation: 0deg;
+    --full-circle: 360deg;
+    --radius: 40vw;
+    --duration: 200ms;
+    --cards-container-size: calc(var(--radius) * 2);
+    --cards-container-padding: 2rem;
+    --border-color: rgba(182, 217, 173, 0.3);
+    --label-offset: calc(var(--radius) * -1 - 1rem);
+    --label-size: 30px;
+    --label-color: rgba(182, 217, 173, 0.8);
+    --label-color-hover: #B6D9AD;
+    --label-line-h: 0;
+    --label-line-h-current: 2rem;
+    --label-dot-size: 10px;
+    --title-top: 1.5rem;
+    --title-offset-y: 30px;
+    --info-top: 5rem;
+    --info-width: min(70%, 500px);
+    --info-offset-y: 30px;
+
+    box-sizing: content-box;
+    position: relative;
+    margin: 0 auto;
+    width: var(--cards-container-size);
+    height: var(--cards-container-size);
+    padding: var(--cards-container-padding);
+}
+
+@media (width > 600px) {
+    .timeline-wrapper {
+        /* overflow hidden already applied */
+    }
+}
+
+@media (min-width: 800px) {
+    .timeline-wrapper {
+        height: calc(var(--radius, 20vw));
+    }
+    
+    .cards-container {
+        --radius: 30vw;
+        --label-size: 40px;
+        --label-dot-size: 15px;
+        --label-line-h-current: 4rem;
+        --title-top: 4rem;
+        --info-top: 8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-container {
+        --border-color: rgba(182, 217, 173, 0.4);
+    }
+}
+
+.cards {
+    position: absolute;
+    inset: var(--cards-container-padding);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out var(--duration);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cards li {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    transform-origin: center;
+    display: grid;
+    place-content: center;
+    transform: rotate(calc(var(--i) * 360deg / var(--items)));
+    pointer-events: none;
+}
+
+.cards li > label {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transform: translateY(var(--label-offset));
+    width: var(--label-size);
+    height: var(--label-size);
+    cursor: pointer;
+    pointer-events: initial;
+    text-align: center;
+    color: var(--label-color);
+    font-size: clamp(.8rem, 2.5vw + .04rem, 1rem);
+    font-weight: 600;
+    transition: var(--duration) ease-in-out;
+    font-family: "grad", sans-serif;
+}
+
+.cards li > label::before {
+    content: '';
+    position: absolute;
+    top: var(--cards-container-padding);
+    left: 50%;
+    translate: -50% 0;
+    width: var(--label-dot-size);
+    height: var(--label-dot-size);
+    border-radius: 50%;
+    background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+    background-size: 300%;
+    transition: all var(--duration) ease-in-out;
+}
+
+.cards li > label::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% 5px;
+    width: 2px;
+    height: var(--label-line-h);
+    background: linear-gradient(180deg, #B6D9AD, #9BD7BA);
+    transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
+}
+
+.cards li > label:hover {
+    --label-color: #F6B0BB;
+}
+
+.cards li > label:hover::before {
+    animation: gradientMove 3s ease infinite;
+}
+
+.cards > li > h2,
+.cards > li > .awards-list {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, 0);
+    transform-origin: center;
+}
+
+.cards > li > h2 {
+    top: var(--title-top);
+    opacity: var(--title-opacity, 0);
+    translate: 0 var(--title-offset-y);
+    transition: var(--duration) ease-in-out var(--title-delay, 0ms);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    font-family: "grad", sans-serif;
+    background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cards > li > .awards-list {
+    top: var(--info-top);
+    margin: 0 auto;
+    width: var(--info-width);
+    z-index: 2;
+    font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem);
+    text-align: left;
+    opacity: var(--info-opacity, 0);
+    transition: var(--duration) ease-in-out var(--info-delay, 0ms);
+    line-height: 1.6;
+}
+
+.awards-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.awards-list li {
+    position: static;
+    transform: none;
+    padding: 0.5rem 0;
+    padding-left: 1.8rem;
+    border: none;
+    margin: 0;
+    color: var(--white);
+    font-family: "grad", sans-serif;
+    font-size: clamp(.75rem, 2vw + 0.05rem, .85rem);
+}
+
+.awards-list li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+    margin-top: 0.1rem;
+    font-size: 1rem;
+}
+
+/* Update custom properties for checked item */
+li:has(input:checked) {
+    --label-opacity: 1;
+    --label-color: #F6B0BB;
+    --label-line-h: var(--label-line-h-current);
+    --label-line-delay: calc(var(--duration) * 2);
+    --title-opacity: 1;
+    --title-offset-y: 0;
+    --title-delay: calc(var(--duration) * 3);
+    --info-opacity: 1;
+    --info-offset-y: 0;
+    --info-delay: calc(var(--duration) * 4);
+}
+
+li:has(input:checked) > h2 {
+    animation: gradientMove 5s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+

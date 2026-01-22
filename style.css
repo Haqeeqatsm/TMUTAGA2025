@@ -56,6 +56,11 @@ p {
   color: var(--wood-dark);
 }
 
+.big-number {
+  font-size: 200px;
+  font-family: "Mestiza", serif;
+}
+
 /*Custom scrollbar*/
 
 ::-webkit-scrollbar {
@@ -810,4 +815,53 @@ p {
 .theses-icon:active {
   opacity: 0.4;
 }
+
+/* awards section */
+.awards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10%;
+  text-align: center;
+  padding-top: 10vh;
+}
+.awards-window-container {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  z-index: 4;
+}
+.awards-center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5vh;
+  z-index: 5;
+  max-width: 80vw;
+}
+.circle-window-icon {
+  padding-top: 5vh;
+  width: 25%;
+}
+
+
+.awards-text,
+.awards-text * {
+  background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--white);
+  transition: color 0.6s ease;
+}
+.awards-text:hover,
+.awards-text:hover * {
+  color: transparent;
+  animation: gradientMove 3s ease infinite;
+}
+
+
 

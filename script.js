@@ -140,23 +140,61 @@ document.querySelectorAll(".theses-container").forEach(glass => {
 
   /* ---------------- BACK TO TOP ---------------- */
   const backToTop = document.getElementById("backToTop");
-  backToTop.addEventListener("mouseenter", () => {
-    backToTop.classList.remove("clicked");
-  });
-
-  backToTop.addEventListener("click", () => {
-    backToTop.classList.add("clicked");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  
+  if (backToTop) {
+    backToTop.addEventListener("mouseenter", () => {
+      backToTop.classList.remove("clicked");
     });
-  });
 
-  window.addEventListener("scroll", () => {
-    backToTop.style.opacity = window.scrollY < 200 ? "0" : "";
-    backToTop.style.pointerEvents = window.scrollY < 200 ? "none" : "auto";
-  });
+    backToTop.addEventListener("click", () => {
+      backToTop.classList.add("clicked");
 
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      backToTop.style.opacity = window.scrollY < 200 ? "0" : "";
+      backToTop.style.pointerEvents = window.scrollY < 200 ? "none" : "auto";
+    });
+  }
+
+  /* ---------------- TIMELINE ROTATION ---------------- */
+  const cards = document.querySelector('.cards');
+  const radioButtons = document.querySelectorAll('input[type="radio"][name="gallery-item"]');
+  
+  if (cards && radioButtons.length > 0) {
+    const totalItems = radioButtons.length;
+    const anglePerItem = 360 / totalItems;
+
+    radioButtons.forEach((radio, index) => {
+      radio.addEventListener('change', function() {
+        if (this.checked) {
+          // Calculate base target angle
+          const baseTarget = -(index * anglePerItem);
+          
+          // Find equivalent angle closest to 0 (within -180 to 180)
+          let bestAngle = baseTarget;
+          while (bestAngle > 180) bestAngle -= 360;
+          while (bestAngle < -180) bestAngle += 360;
+          
+          // Apply rotation
+          cards.style.transform = `rotate(${bestAngle}deg)`;
+          
+          console.log(`Index ${index}: rotating to ${bestAngle}°`);
+        }
+      });
+
+      // Set initial rotation if checked on load  
+      if (radio.checked) {
+        let angle = -(index * anglePerItem);
+        while (angle > 180) angle -= 360;
+        while (angle < -180) angle += 360;
+        cards.style.transform = `rotate(${angle}deg)`;
+      }
+    });
+  }
 
 });
