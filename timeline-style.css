@@ -74,7 +74,7 @@ input[type="radio"] {
 
 @media (min-width: 1200px) {
     .cards-container {
-        --border-color: rgba(182, 217, 173, 0.4);
+        --border-color: var(--wood-dark);
     }
 }
 
@@ -83,7 +83,7 @@ input[type="radio"] {
     inset: var(--cards-container-padding);
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 1px solid var(--border-color);
+    border: 8px solid var(--border-color);
     transition: transform 0.3s ease-in-out var(--duration);
     list-style: none;
     margin: 0;
@@ -113,10 +113,9 @@ input[type="radio"] {
     pointer-events: initial;
     text-align: center;
     color: var(--label-color);
-    font-size: clamp(.8rem, 2.5vw + .04rem, 1rem);
-    font-weight: 600;
     transition: var(--duration) ease-in-out;
-    font-family: "grad", sans-serif;
+    font-family: "civane-normal", sans-serif;
+    font-size: 1rem;
 }
 
 .cards li > label::before {
@@ -141,8 +140,9 @@ input[type="radio"] {
     translate: -50% 5px;
     width: 2px;
     height: var(--label-line-h);
-    background: linear-gradient(180deg, #B6D9AD, #9BD7BA);
+    background: linear-gradient(180deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
     transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
+    border-radius: 5rem;
 }
 
 .cards li > label:hover {
@@ -167,9 +167,6 @@ input[type="radio"] {
     opacity: var(--title-opacity, 0);
     translate: 0 var(--title-offset-y);
     transition: var(--duration) ease-in-out var(--title-delay, 0ms);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 700;
-    font-family: "grad", sans-serif;
     background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
     background-size: 300%;
     -webkit-background-clip: text;
@@ -182,11 +179,11 @@ input[type="radio"] {
     margin: 0 auto;
     width: var(--info-width);
     z-index: 2;
-    font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem);
     text-align: left;
     opacity: var(--info-opacity, 0);
     transition: var(--duration) ease-in-out var(--info-delay, 0ms);
-    line-height: 1.6;
+    font-family: "civane-normal", sans-serif;
+    font-size: 1rem;
 }
 
 .awards-list ul {
@@ -203,16 +200,13 @@ input[type="radio"] {
     border: none;
     margin: 0;
     color: var(--white);
-    font-family: "grad", sans-serif;
-    font-size: clamp(.75rem, 2vw + 0.05rem, .85rem);
 }
 
 .awards-list li::before {
-    content: '🏆';
+    content: '';
     position: absolute;
     left: 0;
     margin-top: 0.1rem;
-    font-size: 1rem;
 }
 
 /* Update custom properties for checked item */
