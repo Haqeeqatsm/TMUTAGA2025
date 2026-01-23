@@ -54,36 +54,46 @@
     </nav>
 
   	<div class="archive">
-    	<h1>Journal Archive</h1>
-    	<p>TMUTAGA has been proudly showcasing work produced by our very own Graphic Communications Management students at Toronto Metropolitan University since 2006! We invite you to discover this content through our archive via downloadable PDFs. Recent journals feature audio read-alongs of thesis papers and for the first time, the 2026 edition of our journal is presented digitally as an ebook.</p>
-    	<p class="caption">Disclaimer: In 2022, Ryerson University underwent a name change to Toronto Metropolitan University. As a result, a majority of our previous journals were published under our old name, RyeTAGA.</p>
-      
+      <div class="archive-hero">
+    	  <h1>Journal Archive</h1>
+    	  <p>TMUTAGA has been proudly showcasing work produced by our very own Graphic Communications Management students at Toronto Metropolitan University since 2006! We invite you to discover this content through our archive via downloadable PDFs. Recent journals feature audio read-alongs of thesis papers and for the first time, the 2026 edition of our journal is presented digitally as an ebook.</p>
+    	  <p class="caption">Disclaimer: In 2022, Ryerson University underwent a name change to Toronto Metropolitan University. As a result, a majority of our previous journals were published under our old name, RyeTAGA.</p>
+      </div>
+
       <div class="container my-5">
-      <!-- 4x4 grid: 2025 → 2010 -->
-      <div class="row g-4">
-        <script>
-          for (let y = 2025; y >= 2010; y--) {
-            document.write(`
-              <div class="col-6 col-md-3 text-center">
-                <img src="media/${y}-cover.jpg" class="img-fluid rounded" alt="${y}">
-                <p class="mt-2">${y}</p>
-              </div>
-            `);
-          }
-        </script>
-      </div>
-    
-      <!-- 1x2 centered: 2008 & 2007 -->
-      <div class="row g-4 justify-content-center mt-3">
-        <div class="col-6 col-md-3 text-center">
-          <img src="media/2008-cover.jpg" class="img-fluid rounded" alt="2008">
-          <p class="mt-2">2008</p>
+        <!-- 4x4 grid: 2025 → 2010 -->
+        <div class="row g-4">
+          <script>
+            for (let y = 2025; y >= 2010; y--) {
+              document.write(`
+                <div class="col-6 col-md-3 text-center">
+                  <div class="cover-img-container">
+                    <img src="media/${y}-cover.jpg" class="cover-img img-fluid rounded" alt="${y}">
+                  </div>
+                  <p class="mt-2">${y}</p>
+                </div>
+              `);
+            }
+          </script>
         </div>
-        <div class="col-6 col-md-3 text-center">
-          <img src="media/2007-cover.jpg" class="img-fluid rounded" alt="2007">
-          <p class="mt-2">2007</p>
+      
+        <!-- 1x2 centered: 2008 & 2007 -->
+        <div class="row g-4 justify-content-center mt-3">
+          <div class="col-6 col-md-3 text-center">
+            <div class="cover-img-container">
+              <img src="media/2008-cover.jpg" class="cover-img img-fluid rounded" alt="2008">
+            </div>
+            <p class="mt-2">2008</p>
+          </div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="cover-img-container">
+              <img src="media/2007-cover.jpg" class="cover-img img-fluid rounded" alt="2007">
+            </div>
+            <p class="mt-2">2007</p>
+          </div>
         </div>
       </div>
+
     
       <div class="back-to-top" id="backToTop">
         <img src="media/arrow-up.svg" alt="Back to top">

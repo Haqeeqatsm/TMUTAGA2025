@@ -40,88 +40,83 @@ const iconMap = {
 
 let currentActive = null;
 
-/* ---------------- CLICK TO SCROLL ---------------- */
-Object.keys(iconMap).forEach(iconId => {
-  const icon = document.getElementById(iconId);
-  const target = document.querySelector("." + iconMap[iconId]);
+// Only run theses nav code if elements exist
+if (nav && previews.length > 0) {
 
-  if (icon && target) {
-    icon.addEventListener("click", () => {
-      target.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-  }
-});
+  /* ---------------- CLICK TO SCROLL ---------------- */
+  Object.keys(iconMap).forEach(iconId => {
+    const icon = document.getElementById(iconId);
+    const target = document.querySelector("." + iconMap[iconId]);
 
-/* ---------------- ALIGN NAV ---------------- */
-function alignNav(forceFirst = false) {
-  let closest = null;
-
-  if (forceFirst && previews.length > 0) {
-    closest = previews[0];
-  } else {
-    let closestDistance = Infinity;
-
-    previews.forEach(preview => {
-      const rect = preview.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const distance = Math.abs(center - window.innerHeight / 2);
-
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closest = preview;
-      }
-    });
-  }
-
-  if (!closest || !nav) return;
-
-  const rect = closest.getBoundingClientRect();
-  const newTop = rect.top + rect.height / 2;
-
-  /* ---------------- FADE ANIMATION ON SWITCH ---------------- */
-  if (closest !== currentActive) {
-    nav.classList.remove("fade-in");
-    nav.classList.add("fade-out");
-
-    setTimeout(() => {
-      nav.style.top = newTop + "px"; // center to preview
-
-      nav.classList.remove("fade-out");
-      nav.classList.add("fade-in");
-
-      setTimeout(() => {
-        nav.classList.remove("fade-in");
-      }, 250);
-
-      currentActive = closest;
-    }, 150);
-  } else {
-    // if same preview, just follow vertically
-    nav.style.top = newTop + "px";
-  }
-
-  /* ---------------- SET ACTIVE ICON ---------------- */
-  Object.keys(iconMap).forEach(id => {
-    document.getElementById(id)?.classList.remove("active");
+    if (icon && target) {
+      icon.addEventListener("click", () => {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
   });
 
-  const activeIcon = Object.keys(iconMap).find(
-    key => closest.classList.contains(iconMap[key])
-  );
+  /* ---------------- ALIGN NAV ---------------- */
+  function alignNav(forceFirst = false) {
+    let closest = null;
 
-  if (activeIcon) {
-    document.getElementById(activeIcon).classList.add("active");
+    if (forceFirst && previews.length > 0) {
+      closest = previews[0];
+    } else {
+      let closestDistance = Infinity;
+
+      previews.forEach(preview => {
+        const rect = preview.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const distance = Math.abs(center - window.innerHeight / 2);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closest = preview;
+        }
+      });
+    }
+
+    if (!closest || !nav) return;
+
+    currentActive = closest;
+
+    /* ---------------- FADE IN/OUT BASED ON SCROLL POSITION ---------------- */
+    // Fade out only at top of page (scrollY near 0)
+    // Fade in when user scrolls down past a threshold
+    if (window.scrollY < 100) {
+      nav.classList.add("theses-fade-out");
+      nav.classList.remove("theses-fade-in");
+    } else {
+      nav.classList.add("theses-fade-in");
+      nav.classList.remove("theses-fade-out");
+    }
+
+    /* ---------------- SET ACTIVE ICON ---------------- */
+    Object.keys(iconMap).forEach(id => {
+      document.getElementById(id)?.classList.remove("active");
+    });
+
+    const activeIcon = Object.keys(iconMap).find(
+      key => closest.classList.contains(iconMap[key])
+    );
+
+    if (activeIcon) {
+      document.getElementById(activeIcon).classList.add("active");
+    }
   }
+  
+  /* ---------------- SCROLL SYNC ---------------- */
+  window.addEventListener("scroll", () => alignNav(false));
+
+  /* ---------------- SNAP TO CLOSEST ON LOAD ---------------- */
+  window.addEventListener("load", () => {
+    // small timeout to ensure DOM and layout are ready
+    setTimeout(() => alignNav(false), 50);
+  });
+  
+  // Initial call to set correct state
+  alignNav(false);
 }
-
-/* ---------------- SCROLL SYNC ---------------- */
-window.addEventListener("scroll", () => alignNav(false));
-
-/* ---------------- SNAP TO CLOSEST ON LOAD ---------------- */
-window.addEventListener("load", () => {
-  // small timeout to ensure DOM and layout are ready
-  setTimeout(() => alignNav(false), 50);
-});
 
 /* ---------------- theses glass effect ---------------- */
 document.querySelectorAll(".theses-container").forEach(glass => {
@@ -164,37 +159,97 @@ document.querySelectorAll(".theses-container").forEach(glass => {
   /* ---------------- TIMELINE ROTATION ---------------- */
   const cards = document.querySelector('.cards');
   const radioButtons = document.querySelectorAll('input[type="radio"][name="gallery-item"]');
+  const totalItems = radioButtons.length;
+  const anglePerItem = 360 / totalItems;
+  let currentIndex = Array.from(radioButtons).findIndex(r => r.checked);
+  let currentRotation = -currentIndex * anglePerItem;
+  let isKeyboardControl = false; // Prevent double rotation
   
-  if (cards && radioButtons.length > 0) {
-    const totalItems = radioButtons.length;
-    const anglePerItem = 360 / totalItems;
+  // Smooth rotation
+  if (cards) {
+    cards.style.transition = 'transform 0.5s ease';
+    cards.style.transform = `rotate(${currentRotation}deg)`;
+  }
+  
+  // Rotate to a target index in a specific direction
+  function rotateToIndex(targetIndex, direction = 'auto') {
+      if (targetIndex === currentIndex) return;
+      
+      let stepsForward = (targetIndex - currentIndex + totalItems) % totalItems;
+      let stepsBackward = (currentIndex - targetIndex + totalItems) % totalItems;
+      let rotationSteps;
+      
+      // Determine rotation direction
+      if (direction === 'forward') {
+          rotationSteps = stepsForward;
+      } else if (direction === 'backward') {
+          rotationSteps = -stepsBackward;
+      } else { // auto = pick shortest
+          rotationSteps = stepsForward <= stepsBackward ? stepsForward : -stepsBackward;
+      }
+      
+      currentRotation -= rotationSteps * anglePerItem;
+      if (cards) {
+        cards.style.transform = `rotate(${currentRotation}deg)`;
+      }
+      currentIndex = targetIndex;
+  }
+  
+  // Radio button clicks (auto picks shortest path)
+  radioButtons.forEach((radio, index) => {
+      radio.addEventListener('change', function () {
+          if (this.checked && !isKeyboardControl) {
+              rotateToIndex(index, 'auto');
+          }
+          isKeyboardControl = false; // Reset flag after handling
+      });
+  });
+  
+  // Arrow keys
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+          isKeyboardControl = true;
+          let nextIndex = (currentIndex + 1) % totalItems;
+          radioButtons[nextIndex].checked = true;
+          rotateToIndex(nextIndex, 'forward');
+      } else if (e.key === 'ArrowLeft') {
+          isKeyboardControl = true;
+          let prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+          radioButtons[prevIndex].checked = true;
+          rotateToIndex(prevIndex, 'backward');
+      }
+  });
 
-    radioButtons.forEach((radio, index) => {
-      radio.addEventListener('change', function() {
-        if (this.checked) {
-          // Calculate base target angle
-          const baseTarget = -(index * anglePerItem);
-          
-          // Find equivalent angle closest to 0 (within -180 to 180)
-          let bestAngle = baseTarget;
-          while (bestAngle > 180) bestAngle -= 360;
-          while (bestAngle < -180) bestAngle += 360;
-          
-          // Apply rotation
-          cards.style.transform = `rotate(${bestAngle}deg)`;
-          
-          console.log(`Index ${index}: rotating to ${bestAngle}°`);
+  // FADE IN ON SCROLL ANIMATIONS
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible'); // fade in
+        } else {
+          entry.target.classList.remove('visible'); // fade out when leaves viewport
         }
       });
+    },
+    { 
+      threshold: 0.2, // trigger when 10% of element is visible
+      rootMargin: '50px' // trigger 50px before element enters viewport
+    }
+  );
 
-      // Set initial rotation if checked on load  
-      if (radio.checked) {
-        let angle = -(index * anglePerItem);
-        while (angle > 180) angle -= 360;
-        while (angle < -180) angle += 360;
-        cards.style.transform = `rotate(${angle}deg)`;
-      }
-    });
-  }
+  // Observe all fade-in elements and check if already visible
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+    
+    // Immediately check if element is already in viewport on page load
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const isInViewport = rect.top < windowHeight && rect.bottom > 0;
+    
+    if (isInViewport) {
+      // Add visible class immediately for elements in viewport on load
+      el.classList.add('visible');
+    }
+  });
 
 });
