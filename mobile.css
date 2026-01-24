@@ -1,0 +1,64 @@
+@media (max-width: 768px) {
+  .text-logo {
+    display: none; 
+  }
+
+  h1 {
+  font-family: "Mestiza", serif;
+  font-size: 32px;
+  color: var(--text-color-main);
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Mestiza-bold", serif;
+  font-size: 24px;
+  color: var(--text-color-main);
+  margin-bottom: 0;
+}
+
+h3 {
+  font-family: "civane-normal", sans-serif;
+  font-size: 24px;
+  color: var(--text-color-main);
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: "Mestiza", serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-color-main);
+  margin-bottom: 0;
+}
+
+/* Body text */
+p {
+  font-family: "civane-normal", sans-serif;
+  font-size: 16px;
+  color: var(--text-color-main);
+  margin-bottom: 0;
+}
+
+/* Caption / small text */
+.caption {
+  font-family: "civane-normal", sans-serif;
+  font-size: 12px;
+}
+
+.dark{
+  color: var(--wood-dark);
+}
+
+.big-number {
+  font-size: 100px;
+  font-family: "Mestiza", serif;
+}
+
+small{
+  font-size: 8px;
+  font-family: "civane-normal", sans-serif;
+  color: var(--text-color-main)
+}
+
+}

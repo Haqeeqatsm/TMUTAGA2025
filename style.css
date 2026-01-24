@@ -61,6 +61,12 @@ p {
   font-family: "Mestiza", serif;
 }
 
+small{
+  font-size: 16px;
+  font-family: "civane-normal", sans-serif;
+  color: var(--text-color-main)
+}
+
 /*Custom scrollbar*/
 
 ::-webkit-scrollbar {
@@ -924,115 +930,100 @@ p {
 .donors {
   	width: 100%;
   	position: relative;
-  	overflow: hidden;
   	display: flex;
   	flex-direction: column;
   	align-items: center;
   	justify-content: center;
-  	padding: 0px 11px;
-  	box-sizing: border-box;
-  	isolation: isolate;
   	text-align: center;
+    gap: 5vh;
+    padding: 3vh;
 }
-.donors-grid-parent {
-  	align-self: stretch;
-  	display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 50px;
-  	z-index: 4;
-  	flex-shrink: 0;
+.donors-header{
+  width: 80vw;
 }
-.donors-grid {
-  	display: grid;
-  	grid-template-rows: repeat(3, 290px);
-  	grid-template-columns: repeat(3, 290px);
-  	justify-content: start;
-  	align-content: start;
-  	gap: 0px;
-  	flex-shrink: 0;
+
+.donor-card-glass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  padding-bottom: 100%; 
+  position: relative;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.25),
+    inset 0 0 25px rgba(255,255,255,0.35);
+
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
-.donors-grid-child {
-  	position: absolute;
-  	top: 0px;
-  	left: 0px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
+
+.donor-card-glass::before {
+  content: "";
+  position: absolute;
+  inset: 5%;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      100px circle at var(--x, 50%) var(--y, 50%),
+      #83c9b3,
+      #b6d9ad,
+      #f6b0bb,
+      transparent 70%
+    );
+
+  filter: blur(25px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-.donors-grid-item {
-  	position: absolute;
-  	top: 0px;
-  	left: 300px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
+
+.donor-card-glass:hover::before {
+  opacity: 1;
 }
-.donors-grid-inner {
-  	position: absolute;
-  	top: 0px;
-  	left: 600px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
+
+.donor-card-glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 19px;
+  z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.65),
+    transparent 40%,
+    transparent 60%,
+    rgba(255,255,255,0.35)
+  );
+
+  pointer-events: none;
+  opacity: 0.45;
 }
-.rectangle-icon {
-  	position: absolute;
-  	top: 300px;
-  	left: 0px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
+
+.donor-card-glass > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 90%;
 }
-.donors-grid-child2 {
-  	position: absolute;
-  	top: 300px;
-  	left: 300px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
+
+.donor-card-glass img {
+  max-width: 100%;
+  object-fit: contain;
 }
-.donors-grid-child3 {
-  	position: absolute;
-  	top: 300px;
-  	left: 600px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
-}
-.donors-grid-child4 {
-  	position: absolute;
-  	top: 600px;
-  	left: 0px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
-}
-.donors-grid-child5 {
-  	position: absolute;
-  	top: 600px;
-  	left: 300px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
-}
-.donors-grid-child6 {
-  	position: absolute;
-  	top: 600px;
-  	left: 600px;
-  	border-radius: 10px;
-  	width: 290px;
-  	height: 290px;
-  	object-fit: cover;
-}
+
 
 /* ---------------- Base fade animations ---------------- */
 .fade-in {
