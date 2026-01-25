@@ -107,15 +107,14 @@ input[type="radio"] {
     inset: 0;
     margin: auto;
     transform: translateY(var(--label-offset));
-    width: var(--label-size);
     height: var(--label-size);
     cursor: pointer;
     pointer-events: initial;
     text-align: center;
     color: var(--label-color);
     transition: var(--duration) ease-in-out;
-    font-family: "civane-normal", sans-serif;
-    font-size: 1rem;
+    line-height: calc(var(--label-size) - 0.5rem);
+
 }
 
 .cards li > label::before {
@@ -179,11 +178,9 @@ input[type="radio"] {
     margin: 0 auto;
     width: var(--info-width);
     z-index: 2;
-    text-align: left;
+    text-align: center;
     opacity: var(--info-opacity, 0);
     transition: var(--duration) ease-in-out var(--info-delay, 0ms);
-    font-family: "civane-normal", sans-serif;
-    font-size: 1rem;
 }
 
 .awards-list ul {
