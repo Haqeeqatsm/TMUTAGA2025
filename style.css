@@ -61,7 +61,7 @@ p {
   font-family: "Mestiza", serif;
 }
 
-small{
+.small{
   font-size: 16px;
   font-family: "civane-normal", sans-serif;
   color: var(--text-color-main)
@@ -797,15 +797,15 @@ li{
   width: 65%;
 }
 .theses-button {
-  width: 15vw;
+  width: 20vw;
   border-radius: 6px;
   background-color: var(--wood-light);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2%;
-
   cursor: pointer;
+  gap: 1vw;
 }
 
 .theses-button p {
@@ -816,6 +816,27 @@ li{
 
 .theses-button img {
   transition: opacity 0.4s ease;
+}
+
+* Progress container */
+.audio-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+/* When active */
+.theses-button.active .audio-progress {
+  width: 200px;
+  opacity: 1;
+}
+
+.audio-progress input[type="range"] {
+  width: 120px;
 }
 
 /* hover state */

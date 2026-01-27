@@ -61,21 +61,30 @@
 			<p class="caption">Take a look at this year’s student research papers from the graduating class of 2025.</p>
 		</div>
 
-    	<div class="theses-preview sashaPreviewContainer fade-in fade-bottom" data-target="sashaPreviewContainer">
-		  <div class="theses-container">		
-		    <div class="theses-text">
-		      <h4 class="dark">
-		        Characterizing the Thermal Properties of Mycelium-Based Bioplastic Through Composite Material Integration
-			  </h4>
-		      <p class="dark">Sasha Au-Yong</p>		
-		      <div class="theses-button">
-		        <p>Listen</p>
-		        <img src="media/play-button.svg" alt="">
-		      </div>
-		    </div>		
-		    <img class="theses-glass" src="media/sasha-glass.svg" alt="">		
-		  </div>
-		</div>
+    	<div class="theses-preview fade-in fade-bottom">
+  		  <div class="theses-container">
+  		    <div class="theses-text">
+  		      <h4 class="dark">
+  		        Characterizing the Thermal Properties of Mycelium-Based Bioplastic Through Composite Material Integration
+  		      </h4>
+  		      <p class="dark">Sasha Au-Yong</p>
+
+  		      <div class="theses-button" data-audio="media/temp.mp3">
+  		        <p>Listen</p>
+
+  		        <div class="audio-progress">
+  		          <span class="time current small">0:00</span>
+  		          <input type="range" value="0" min="0" step="1">
+  		          <span class="time duration small">0:00</span>
+  		        </div>
+
+  		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+  		      </div>
+  		    </div>
+
+  		    <img class="theses-glass" src="media/sasha-glass.svg" alt="">
+  		  </div>
+  		</div>
 
 		<div class="theses-preview ummePreviewContainer fade-in fade-bottom" data-target="ummePreviewContainer">
 		  <div class="theses-container">
@@ -136,7 +145,7 @@
 		      <p class="dark">Sarib Nazir</p>
 		      <div class="theses-button">
 		        <p>Listen</p>
-		        <img src="media/play-button.svg" alt="">
+		        <img class="play-icon" src="media/play-button.svg" alt="">
 		      </div>
 		    </div>
 		    <img class="theses-glass" src="media/sarib-glass.svg" alt="">
@@ -156,5 +165,8 @@
       	</div>
 
   	</div>
+
+	<!-- GLOBAL AUDIO -->
+	<audio id="globalAudio"></audio>
 </body>
 </html>
