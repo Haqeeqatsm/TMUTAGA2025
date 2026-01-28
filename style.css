@@ -97,8 +97,6 @@ li{
 
 /* Navbar Styles */
 .navbar {
-  font-size: 36px;
-  font-family: "civane-normal", sans-serif;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -109,6 +107,8 @@ li{
   padding: 0.5rem 0;  
   display: inline-block;
   position: relative;
+  font-size: 36px;
+  font-family: "civane-normal", sans-serif;
 }
 
 /* Underline */
@@ -690,7 +690,6 @@ li{
   transform: translate(-2px, -2px); /* lift image slightly */
 }
 
-
 /*theses Section */
 .theses {
   display: flex;
@@ -731,7 +730,7 @@ li{
     inset 0 0 25px rgba(255,255,255,0.35);
 
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
   align-items: center;
   padding: 5% 10%;
   justify-content: space-between;
@@ -759,7 +758,6 @@ li{
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-
 
 .theses-container:hover::before {
   opacity: 1;
@@ -796,8 +794,9 @@ li{
   flex-shrink: 0;
   width: 65%;
 }
+
 .theses-button {
-  width: 20vw;
+  width: 10vw;
   border-radius: 6px;
   background-color: var(--wood-light);
   display: flex;
@@ -806,19 +805,27 @@ li{
   padding: 2%;
   cursor: pointer;
   gap: 1vw;
+  transition: width 0.4s ease;
+}
+
+.theses-button.active {
+  width: 20vw;
 }
 
 .theses-button p {
   margin: 0;
   color: var(--white);
   transition: color 0.4s ease;
+  white-space: nowrap;
 }
 
-.theses-button img {
-  transition: opacity 0.4s ease;
+.theses-button .play-icon {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-* Progress container */
+/* Progress container */
 .audio-progress {
   display: flex;
   align-items: center;
@@ -829,7 +836,6 @@ li{
   transition: width 0.4s ease, opacity 0.3s ease;
 }
 
-/* When active */
 .theses-button.active .audio-progress {
   width: 200px;
   opacity: 1;
@@ -837,15 +843,62 @@ li{
 
 .audio-progress input[type="range"] {
   width: 120px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+  background-size: 300%;
+  outline: none;
+  animation: gradientMove 3s ease infinite;
 }
 
-/* hover state */
-.theses-button:hover p {
+.audio-progress input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.audio-progress input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.audio-progress .time {
+  color: var(--white);
+  font-size: 0.85rem;
+  min-width: 35px;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hover states for play icon - default state */
+.theses-button .play-icon:not(.paused):hover {
+  content: url("media/play-button-blossom.svg");
   color: var(--blossom);
 }
 
-.theses-button:hover img {
-  content: url("media/play-button-blossom.svg"); /* new image on hover */
+/* Hover state for pause icon - when playing */
+.theses-button .play-icon.paused:hover {
+  content: url("media/pause-button-blossom.svg");
+  color: var(--blossom);
 }
 
 .theses-glass {
@@ -859,16 +912,13 @@ li{
 .theses-nav {
   position: fixed;
   left: 3vw;
-
   transform: translateY(-50%) translateX(0);
-
   display: flex;
   flex-direction: column;
   gap: 18px;
   align-items: center;
   justify-content: center;
   z-index: 100;
-
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -910,6 +960,7 @@ li{
 .theses-icon:active {
   opacity: 0.4;
 }
+
 /* awards section */
 .awards {
   width: 100%;

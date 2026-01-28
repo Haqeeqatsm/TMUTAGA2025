@@ -270,71 +270,105 @@ document.querySelectorAll(".donor-card-glass").forEach(glass => {
   // THESES AUDIO LOGIC
   const audio = document.getElementById("globalAudio");
   let activeButton = null;
-
+  let progressTimeout = null;
+  
   document.querySelectorAll(".theses-button").forEach(button => {
     const playIcon = button.querySelector(".play-icon");
-    const progress = button.querySelector("input[type='range']");
+    const progress = button.querySelector("input[type='range']"); 
     const currentTimeEl = button.querySelector(".current");
     const durationEl = button.querySelector(".duration");
     const src = button.dataset.audio;
-
+  
     // 🔥 PLAY / PAUSE ONLY WHEN ICON IS CLICKED
     playIcon.addEventListener("click", (e) => {
       e.stopPropagation();
-
+    
       if (activeButton === button) {
         if (audio.paused) {
           audio.play();
           playIcon.src = "media/pause-button.svg";
+          playIcon.classList.add("paused");
+          
+          // Show progress bar again when resuming
+          button.classList.add("active");
+          
+          // Clear timeout when resuming
+          if (progressTimeout) {
+            clearTimeout(progressTimeout);
+            progressTimeout = null;
+          }
         } else {
           audio.pause();
           playIcon.src = "media/play-button.svg";
+          playIcon.classList.remove("paused");
+          
+          // Start 5 second timeout to hide progress bar
+          progressTimeout = setTimeout(() => {
+            button.classList.remove("active");
+          }, 3000);
         }
         return;
       }
-
+    
       // Stop previous
       if (activeButton) {
         activeButton.classList.remove("active");
-        activeButton.querySelector(".play-icon").src = "media/play-button.svg";
+        const prevIcon = activeButton.querySelector(".play-icon");
+        prevIcon.src = "media/play-button.svg";
+        prevIcon.classList.remove("paused");
+        
+        // Clear any existing timeout
+        if (progressTimeout) {
+          clearTimeout(progressTimeout);
+          progressTimeout = null;
+        }
       }
-
+    
       // Activate new
       activeButton = button;
       button.classList.add("active");
       playIcon.src = "media/pause-button.svg";
-
+      playIcon.classList.add("paused");
+    
       audio.src = src;
       audio.currentTime = 0;
       audio.play();
     });
-
+  
     // Progress update
     audio.addEventListener("timeupdate", () => {
       if (activeButton !== button) return;
-
+    
       progress.max = audio.duration || 0;
       progress.value = audio.currentTime || 0;
-
+    
       currentTimeEl.textContent = formatTime(audio.currentTime);
       durationEl.textContent = formatTime(audio.duration);
     });
-
+  
     // Scrub without triggering play
     progress.addEventListener("input", (e) => {
       e.stopPropagation();
       audio.currentTime = progress.value;
     });
   });
-
+  
   // Reset on end
   audio.addEventListener("ended", () => {
     if (!activeButton) return;
     activeButton.classList.remove("active");
-    activeButton.querySelector(".play-icon").src = "media/play-button.svg";
+    const endedIcon = activeButton.querySelector(".play-icon");
+    endedIcon.src = "media/play-button.svg";
+    endedIcon.classList.remove("paused");
     activeButton = null;
+    
+    // Clear timeout
+    if (progressTimeout) {
+      clearTimeout(progressTimeout);
+      progressTimeout = null;
+    }
   });
-
+  
   function formatTime(seconds) {
     if (!seconds) return "0:00";
     const m = Math.floor(seconds / 60);
