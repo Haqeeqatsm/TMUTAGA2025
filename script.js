@@ -16,13 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------- NAVBAR ---------------- */
+  const navbar = document.querySelector('.navbar');
+  const textLogo = document.getElementById('logo');
   const links = document.querySelectorAll(".navbar-nav .nav-link");
 
+  // Active link functionality
   links.forEach(link => {
     link.addEventListener("click", () => {
       links.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
     });
+  });
+
+  window.addEventListener('scroll', () => {
+    const logoBottom = textLogo.offsetTop + textLogo.offsetHeight;
+    const scrollPosition = window.pageYOffset;
+
+    if (scrollPosition > logoBottom) {
+      navbar.classList.add('sticky');
+    } else {
+      navbar.classList.remove('sticky');
+    }
+  });
+
+  const logoLink = document.getElementById('logo-link');
+  logoLink.addEventListener('click', () => {
+    logoLink.querySelector('img').style.filter = 'none';
   });
 
 /* ---------------- THESES NAV ---------------- */

@@ -95,20 +95,154 @@ li{
   background-color: transparent;
 }
 
+/* Text Logo */
+.text-logo {
+  display: grid;
+  place-items: center;
+  user-select: none;
+  margin-bottom: 2rem;
+}
+
+/* Back leather text */
+.logo-back {
+  grid-area: 1 / 1;
+  font-family: "leather", serif;
+  font-size: clamp(100px, 15vw, 250px);
+  color: #0c000b;
+  opacity: 0.20;
+  white-space: nowrap;
+  z-index: 1;
+  transform: translate(6px, 6px);
+}
+
+/* Front mestiza text */
+.logo-front {
+  grid-area: 1 / 1;
+  font-family: "mestiza", serif;
+  font-weight: 700;
+  font-size: clamp(60px, 10vw, 132px);
+  color: var(--white);
+  white-space: nowrap;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Gradient layer */
+.logo-gradient {
+  grid-area: 1 / 1;
+  font-family: "mestiza", serif;
+  font-weight: 700;
+  font-size: clamp(60px, 10vw, 132px);
+  white-space: nowrap;
+  background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* Hover fade-in gradient */
+.text-logo:hover .logo-gradient {
+  opacity: 1;
+  animation: gradientMove 3s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Navbar Styles */
 .navbar {
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 5%;
+  padding-right: 5%;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--wood-dark);
+  backdrop-filter: blur(10px);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Even spacing for nav items */
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 1;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade in from top animation when sticky - all items together */
+.navbar:not(.sticky) .navbar-nav {
+  opacity: 1;
+  transform: translateY(-50px);
+}
+
+.navbar.sticky .navbar-nav {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Small logo that fades in from top */
+.navbar-logo-small {
+  width: 10%;
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.5s ease;
+  position: absolute;
+  left: 0;
+}
+
+.navbar.sticky .navbar-logo-small {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+}
+
+/* Navbar collapse - full width for even spacing */
+.navbar-collapse {
+  flex-grow: 1;
+}
+
+
+
+.navbar-nav .nav-item {
+  flex: 0 1 auto;
 }
 
 .navbar-nav .nav-link {
   color: var(--white);       
   transition: color 0.3s ease;
-  padding: 0.5rem 0;  
+  padding: 0.5rem 1rem;  
   display: inline-block;
   position: relative;
   font-size: 36px;
-  font-family: "civane-normal", sans-serif;
 }
 
 /* Underline */
@@ -149,82 +283,45 @@ li{
 .navbar-toggler {
   border: none;
   background: var(--celadon);
+  flex-shrink: 0;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
 }
 
+/* Soft glow on hover using your colors */
+#logo-link:hover img {
+  filter: drop-shadow(0 0 4px var(--celadon))
+          drop-shadow(0 0 8px var(--tea-green))
+          drop-shadow(0 0 10px var(--blossom));
+  transition: filter 0.4s ease;
+}
+
+/* Remove glow on click */
+#logo-link:active img {
+  filter: none;
+  transition: filter 0.2s ease;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
+  .navbar-nav {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
   .navbar-nav .nav-link {
-    font-size: 24px;
+    font-size: 18px;
     padding: 0.5rem 1rem;
   }
+  
+  .navbar-logo-small {
+    width: 20%;
+    min-width: 50px;
+  }
 }
-
-/* Text Logo */
-.text-logo {
-  display: grid;
-  place-items: center;
-  user-select: none;
-}
-
-/* Back leather text */
-.logo-back {
-  grid-area: 1 / 1;
-  font-family: "leather", serif;
-  font-size: 250px;
-  color: #0c000b;
-  opacity: 0.20;
-  white-space: nowrap;
-  z-index: 1;
-  transform: translate(6px, 6px); /* depth */
-}
-
-/* Front mestiza text */
-.logo-front {
-  grid-area: 1 / 1;
-  font-family: "mestiza", serif;
-  font-weight: 700;
-  font-size: 132px;
-  color: var(--white);
-  white-space: nowrap;
-  z-index: 2;
-  cursor: pointer;
-}
-
-/* Gradient layer */
-.logo-gradient {
-  grid-area: 1 / 1;
-  font-family: "mestiza", serif;
-  font-weight: 700;
-  font-size: 132px;
-  white-space: nowrap;
-  background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  opacity: 0;                     /* hidden by default */
-  z-index: 3;
-  transition: opacity 0.6s ease;  /* fade-in/out */
-  pointer-events: none;
-}
-
-/* Hover fade-in gradient */
-.text-logo:hover .logo-gradient {
-  opacity: 1;
-  animation: gradientMove 3s ease infinite;
-}
-
-/* Gradient animation */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 /*back to top button*/
 .back-to-top {
   position: fixed;
@@ -493,13 +590,16 @@ li{
   overflow: hidden;
 }
 .about-img-profile {
-  background: #d9d9d9;
-  border-radius: 50%;
-  flex-shrink: 0;
-  width: 300px;
-  height: 300px;
+  border-radius: 5%;
+  width: 25vw;
   position: relative;
   aspect-ratio: 1;
+  overflow: hidden;
+}
+.about-img-profile img {
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 .bar {
   align-self: center;
