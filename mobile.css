@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .text-logo {
     display: none; 
   }
@@ -60,33 +60,208 @@ p {
   font-family: "civane-normal", sans-serif;
   color: var(--text-color-main)
 }
-/* nav */
 
-/* Responsive */
-.navbar-nav {
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 0.5rem;
+label{
+  font-family: "Mestiza", serif;
+  font-size: 16px;
 }
 
-.navbar-nav .nav-link {
-  font-size: 18px;
-  padding: 0.5rem 1rem;
+li{
+  font-family: "civane-normal", sans-serif;
+  font-size: 12px;
 }
 
-.navbar-logo-small {
-  width: 20%;
-  min-width: 50px;
+/* ============================================ */
+/* MOBILE NAVBAR STYLES */
+/* ============================================ */
+
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Mobile navbar - always fixed at top */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--wood-dark);
+    padding: 0.75rem 5%;
+    z-index: 1000;
+    height: 70px;
+  }
+
+  /* Add space for fixed navbar */
+  body {
+    padding-top: 70px;
+  }
+
+  .text-logo {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Center the small logo */
+  .navbar-logo-small {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  .navbar.sticky .navbar-logo-small {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Container adjustments */
+  .navbar .container-fluid {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hamburger on the left - properly centered */
+  .navbar-toggler {
+    position: relative;
+    z-index: 1001;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  /* Custom hamburger icon - properly centered */
+  .navbar-toggler-icon {
+    position: relative;
+    width: 25px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -8px;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: -8px;
+  }
+
+  /* X icon when expanded */
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Offcanvas sidebar from left */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background: var(--wood-dark);
+    padding: 10vh 2.5rem 2rem;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+  }
+
+  /* Mobile nav items - better spacing */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    transform: none !important;
+    opacity: 1;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: clamp(22px, 5vw, 28px);
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Underline for mobile */
+  .navbar-nav .nav-link::after {
+    left: 0;
+    transform: none;
+  }
+
+  /* Remove hover effects on mobile for better performance */
+  .navbar-nav .nav-link:hover::after {
+    width: 0;
+  }
+
+  .navbar-nav .nav-link:active::after,
+  .navbar-nav .nav-link.active::after {
+    width: 100%;
+  }
 }
 
-/* Hamburger icon */
-.navbar-toggler {
-  border: none;
-  filter: var(--celadon);
-  flex-shrink: 0;
-}
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
-}
+@media (max-width: 576px) {
+  .navbar {
+    height: 60px;
+    padding: 0.5rem 5%;
+  }
 
+  body {
+    padding-top: 60px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  .navbar-logo-small {
+    width: 40%;
+  }
 }

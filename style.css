@@ -498,7 +498,14 @@ li{
   position: relative;
   aspect-ratio: 62/420;
 }
-.about-mission {
+.about-profile-container{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+}
+.about-mission {  
   display: flex;
   flex-direction: column;
   gap: 15%;
@@ -1308,4 +1315,6 @@ li{
   transition-delay: var(--delay, 0s);
 }
 
-/* Optional: slightly smoother animation curve */
+.component-window-icon{
+  width: 10%;
+}
