@@ -209,7 +209,7 @@ li{
 
 /* Small logo that fades in from top */
 .navbar-logo-small {
-  width: 10%;
+  width: 15%;
   height: auto;
   flex-shrink: 0;
   opacity: 0;
@@ -347,7 +347,7 @@ li{
 }
 
 .back-to-top img {
-  width: 18px;
+  width: 55%;
   height: auto;
   transition: transform 0.25s ease;
 }
