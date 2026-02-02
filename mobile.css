@@ -203,11 +203,10 @@ li{
     overflow-y: auto;
     z-index: 1000;
   }
-
   .navbar-collapse.show {
     left: 0;
   }
-
+  
   /* Mobile nav items - better spacing */
   .navbar-nav {
     flex-direction: column;
