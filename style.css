@@ -277,17 +277,6 @@ li{
   width: 100%;
 }
 
-/* Hamburger icon */
-.navbar-toggler {
-  border: none;
-  background: var(--celadon);
-  flex-shrink: 0;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
-}
-
 /* Soft glow on hover using your colors */
 #logo-link:hover img {
   filter: drop-shadow(0 0 4px var(--celadon))
@@ -302,24 +291,6 @@ li{
   transition: filter 0.2s ease;
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-  .navbar-nav {
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .navbar-nav .nav-link {
-    font-size: 18px;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-logo-small {
-    width: 20%;
-    min-width: 50px;
-  }
-}
 /*back to top button*/
 .back-to-top {
   position: fixed;
