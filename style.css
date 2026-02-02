@@ -107,7 +107,7 @@ li{
 .logo-back {
   grid-area: 1 / 1;
   font-family: "leather", serif;
-  font-size: clamp(100px, 15vw, 250px);
+  font-size: 15vw;
   color: #0c000b;
   opacity: 0.20;
   white-space: nowrap;
@@ -120,7 +120,7 @@ li{
   grid-area: 1 / 1;
   font-family: "mestiza", serif;
   font-weight: 700;
-  font-size: clamp(60px, 10vw, 132px);
+  font-size: 10vw;
   color: var(--white);
   white-space: nowrap;
   z-index: 2;
@@ -132,7 +132,7 @@ li{
   grid-area: 1 / 1;
   font-family: "mestiza", serif;
   font-weight: 700;
-  font-size: clamp(60px, 10vw, 132px);
+  font-size: 10vw;
   white-space: nowrap;
   background: linear-gradient(90deg, #B6D9AD, #9BD7BA, #DCB3BA, #F6B0BB);
   background-size: 300%;
@@ -229,8 +229,6 @@ li{
 .navbar-collapse {
   flex-grow: 1;
 }
-
-
 
 .navbar-nav .nav-item {
   flex: 0 1 auto;
@@ -386,11 +384,9 @@ li{
   gap: 45%;
   justify-content: center;
 }
-
 .icons {
   height: 30%;
 }
-
 .component-gradient-line {
   background: linear-gradient(90deg, #b6d9ad, #83c9b3 24.04%, #f6b0bb 94.71%) border-box;
   border-top: 7px solid transparent;
@@ -1206,6 +1202,116 @@ li{
   object-fit: contain;
 }
 
+.join-us-container {
+  padding: 50px 30px 50px 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.join-us{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 3vh;
+  padding: 3vh;
+}
+
+.join-us-text{
+  width: 70vw;
+}
+
+.contact-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: none; /* default no glow */
+}
+
+/* Outer glow on hover */
+.contact-button:hover {
+  box-shadow: 0 0 4px var(--celadon),
+              0 0 8px var(--tea-green),
+              0 0 12px var(--blossom);
+}
+
+/* Text layers */
+.contact-button .button-text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease;
+}
+
+.contact-button .button-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--tea-green), var(--celadon), var(--blossom));
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+/* Gradient text on hover */
+.contact-button:hover .button-gradient {
+  opacity: 1;
+  animation: gradientMove 3s ease infinite;
+}
+
+.contact-button:hover .button-text {
+  color: transparent;
+}
+
+/* Clicked state */
+.contact-button.clicked {
+  background: rgba(255, 255, 255, 0.25); /* brighter glass */
+  box-shadow: none; /* remove glow */
+}
+
+.contact-button.clicked .button-text {
+  color: white !important;
+}
+
+.contact-button.clicked .button-gradient {
+  opacity: 0 !important;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 /* ---------------- Base fade animations ---------------- */
 .fade-in {
