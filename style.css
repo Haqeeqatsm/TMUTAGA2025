@@ -416,13 +416,22 @@ li{
 }
 .component-arches-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding-inline: 1rem;
 }
 .component-small-arch {
   transform: scaleX(-1);
+}
+.component-small-arch,
+.component-small-arch-right {
+    flex: 0 1 auto;
+}
+
+.component-arches-container img {
+    width: clamp(120px, 25vw, 260px);
+    height: auto;
 }
 
 .about-hero {
