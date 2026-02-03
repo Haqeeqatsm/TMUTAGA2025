@@ -247,8 +247,31 @@ li{
   
   .component-small-arch img,
   .component-small-arch-right img {
-    width: 10vw;
+    width: 15vw;
   }
+
+  .about-hero {
+  margin: -5vh 0 0 0;
+  }
+
+  .about-goal{
+    flex-direction: column;
+    gap: 10vh;
+    width: 70vw;
+    padding: 10vh;
+
+  }
+
+  .component-leaf-down{
+    width: 60vw;
+    flex-direction: row;
+    height: 0;
+  }
+
+  .component-pillar{
+    display: none;
+  }
+
 }
 
 @media (max-width: 576px) {
