@@ -272,6 +272,9 @@ li{
     display: none;
   }
 
+  .icons img {
+    width: 8vw;
+  }
 }
 
 @media (max-width: 576px) {
