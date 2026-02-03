@@ -244,6 +244,11 @@ li{
   .navbar-nav .nav-link.active::after {
     width: 100%;
   }
+  
+  .component-small-arch img,
+  .component-small-arch-right img {
+    width: 10vw;
+  }
 }
 
 @media (max-width: 576px) {

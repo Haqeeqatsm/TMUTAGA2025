@@ -421,17 +421,18 @@ li{
   width: 100%;
   padding-inline: 1rem;
 }
+
 .component-small-arch {
   transform: scaleX(-1);
 }
-.component-small-arch,
-.component-small-arch-right {
-    flex: 0 1 auto;
-}
 
-.component-arches-container img {
-    width: clamp(120px, 25vw, 260px);
-    height: auto;
+.component-small-arch img,
+.component-small-arch-right img {
+  width: 15vw; /* 10% of viewport width */
+  min-width: 60px; /* don't let them get too tiny */
+  max-width: 200px; /* don't let them get too huge */
+  height: auto;
+  display: block;
 }
 
 .about-hero {
@@ -461,13 +462,50 @@ li{
   position: relative;
 }
 .about-img-groupPhoto {
-  background: #d9d9d9;
-  width: 416px;
-  height: 416px;
+  width: 30vw;
+  aspect-ratio: 1 / 1;
   float: right;
   margin-left: 34px;
   margin-bottom: 20px;
   shape-outside: margin-box;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  z-index: 10; /* Added */
+}
+
+.about-img-groupPhoto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.about-img-groupPhoto:active {
+  transform: scale(0.98);
+}
+
+.group-photo-slide {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s ease;
+  pointer-events: none; /* Keep this - lets clicks pass through */
+}
+
+.group-photo-slide.current {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.group-photo-slide.next {
+  transform: translateX(100%);
+  z-index: 1;
 }
 .about-goal {
   padding: 0px 10% 0px 10%;
