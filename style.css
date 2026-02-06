@@ -995,11 +995,7 @@ li{
 }
 
 .theses-glass {
-  height: 291px;
-  width: 291px;
-  object-fit: contain;
-  flex-shrink: 0;
-  z-index: 2;
+  width: 20vw;
 }
 
 .theses-nav {

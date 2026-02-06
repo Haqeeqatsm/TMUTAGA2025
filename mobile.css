@@ -299,6 +299,30 @@ li{
   .awards{
     padding-top: 0;
   }
+
+  .theses-preview{
+    padding: 3% 10%;
+  }
+
+  .theses-container{
+    flex-direction: column;
+    gap: 1vh;
+  }
+
+  .theses-text{
+    width: 100%;
+    gap: 1vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .theses-button{
+    width: 25vw;
+  }
+
+  .theses-glass {
+  width: 40vw;
+}
 }
 
 @media (max-width: 576px) {
