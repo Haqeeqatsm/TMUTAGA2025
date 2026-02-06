@@ -275,6 +275,10 @@ li{
   .icons img {
     width: 8vw;
   }
+
+  .component-arches-container{
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 576px) {

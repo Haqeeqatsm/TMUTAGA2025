@@ -27,7 +27,6 @@ h3 {
   font-family: "civane-normal", sans-serif;
   font-size: 48px;
   color: var(--text-color-main);
-  margin-bottom: 0;
 }
 
 h4 {
@@ -541,6 +540,7 @@ li{
   position: relative;
   aspect-ratio: 62/420;
 }
+
 .about-profile-container{
   display: flex;
   flex-direction: row;
@@ -631,7 +631,7 @@ li{
   align-items: flex-start;
   justify-content: center;
   flex-shrink: 0;
-  width: 714px;
+  width: 50vw;
   position: relative;
 }
 .about-profile-name {
@@ -643,12 +643,7 @@ li{
 
 }
 .component-bar {
-  align-self: stretch;
-  flex-shrink: 0;
-  width: 82.88px;
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 82.88/492;
+  height: 100%;
 }
 .component-right-corner-container {
   display: flex;

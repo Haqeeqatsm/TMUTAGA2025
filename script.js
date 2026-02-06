@@ -499,4 +499,66 @@ setTimeout(() => {
   preloadNextImage();
   startSlideshow();
 }, 500);
+
+/* ---------------- GATE CENTERING ---------------- */
+  function adjustGates() {
+    const divider = document.querySelector('.component-divider');
+    const circle = document.querySelector('.component-circle-window');
+    const allGates = document.querySelectorAll('.component-gate');
+    
+    if (!divider || !circle || allGates.length === 0) return;
+    
+    // Split gates into left (first 4) and right (last 4)
+    const leftGates = Array.from(allGates).slice(0, 4);
+    const rightGates = Array.from(allGates).slice(4, 8);
+    
+    // Show all gates first
+    allGates.forEach(gate => gate.style.display = 'block');
+    
+    const viewportWidth = window.innerWidth;
+    
+    // Adjust sizes based on screen width
+    const gateImgs = document.querySelectorAll('.component-gate img');
+    const circleImg = document.querySelector('.component-circle-window img');
+    
+    if (viewportWidth <= 768) {
+      // Mobile sizes - 15vw
+      gateImgs.forEach(img => img.style.width = '15vw');
+      if (circleImg) circleImg.style.width = '20vw';
+    } else {
+      // Desktop - remove inline styles to use CSS defaults
+      gateImgs.forEach(img => img.style.width = '');
+      if (circleImg) circleImg.style.width = '';
+    }
+    
+    const dividerRect = divider.getBoundingClientRect();
+    const circleRect = circle.getBoundingClientRect();
+    
+    // Calculate how far the circle is from viewport center
+    const circleCenter = circleRect.left + (circleRect.width / 2);
+    const viewportCenter = viewportWidth / 2;
+    const offset = circleCenter - viewportCenter;
+    
+    // Hide gates from outside-in to center the circle
+    let hiddenCount = 0;
+    
+    // Check each pair of gates (outermost to innermost)
+    for (let i = 0; i < 4; i++) {
+      const leftGate = leftGates[i];
+      const rightGate = rightGates[3 - i];
+      const leftRect = leftGate.getBoundingClientRect();
+      const rightRect = rightGate.getBoundingClientRect();
+      
+      // If gates are partially or fully off-screen, hide them
+      if (leftRect.left < 0 || rightRect.right > viewportWidth) {
+        leftGate.style.display = 'none';
+        rightGate.style.display = 'none';
+        hiddenCount++;
+      }
+    }
+  }
+
+  // Run on load and resize
+  window.addEventListener('load', adjustGates);
+  window.addEventListener('resize', adjustGates);
 });
