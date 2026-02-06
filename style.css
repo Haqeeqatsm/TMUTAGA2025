@@ -593,18 +593,8 @@ li{
   align-self: stretch;
   transform: scaleX(-1);
 }
-
 .component-tiny-arch-top {
   transform: scaleY(-1);
-}
-.component-tiny-arch2 {
-  flex-shrink: 0;
-  width: 96.18px;
-  height: 96.18px;
-  position: relative;
-  transform-origin: 0 0;
-  transform: rotate(-180deg) scale(1, 1);
-  overflow: hidden;
 }
 .about-img-profile {
   border-radius: 5%;
@@ -623,7 +613,6 @@ li{
   flex-shrink: 0;
   position: relative;
 }
-
 .about-profile-discription {
   display: flex;
   flex-direction: column;
@@ -644,14 +633,6 @@ li{
 }
 .component-bar {
   height: 100%;
-}
-.component-right-corner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  align-self: stretch;
-
 }
 .about-associates {
   padding: 5% 3% 5% 3%;
@@ -1222,10 +1203,33 @@ li{
   padding: 50px 30px 50px 30px;
   display: flex;
   flex-direction: row;
-  gap: 5vw;
   align-items: center;
   justify-content: center;
   align-self: stretch;
+  overflow: visible; /* Allow overflow */
+}
+
+.component-left-corner-container,
+.component-right-corner-container {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.component-left-corner-container {
+  margin-right: -30px; /* Overlap inward on mobile */
+}
+
+.component-right-corner-container {
+  margin-left: -30px; /* Overlap inward on mobile */
+}
+
+.component-tiny-arch img,
+.component-tiny-arch-top img {
+  width: 15vw; /* Bigger on mobile */
+  max-width: 80px; /* Max size on desktop */
+  height: auto;
+  display: block;
 }
 
 .join-us{
