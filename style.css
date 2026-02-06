@@ -525,8 +525,17 @@ li{
   display: flex;
   flex-direction: column;
   gap: 15%;
-  align-items: center;
   justify-content: center;
+}
+.about-vision-text {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+}
+.about-mission-text {
+  align-self: center;
+  align-items: center;
+  text-align: center;
 }
 .component-long-frame-flipped {
   transform-origin: center;
@@ -552,7 +561,6 @@ li{
   display: flex;
   flex-direction: column;
   gap: 15%;
-  align-items: center;
   justify-content: center;
 }
 .about-goal-body {

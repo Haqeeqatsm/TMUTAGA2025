@@ -322,9 +322,51 @@ li{
 
   .theses-glass {
   width: 40vw;
-}
-}
+  }
 
+  .component-long-frame, .component-long-frame-flipped {
+    align-self: center;
+  }
+  .component-long-frame img, .component-long-frame-flipped img {
+    width: 90vw;
+  }
+
+  .about-vision-text {
+    width: 80vw;
+  }
+  .about-mission-text {
+    width: 80vw;
+  }
+  .about-profile{
+    flex-direction: column;
+  }
+  .component-bar{
+    transform: rotate(90deg);
+    margin-top: -20vw;
+    margin-bottom: -30vw;
+  }
+  .component-bar img{
+    height: 35vh;
+  }
+  .about-profile-container{
+    flex-direction: column;
+  }
+  .component-left-corner-container {
+    flex-direction: row;
+    width: 90vw;
+  }
+  .component-tiny-arch img{
+    transform: scale(-1);
+  }
+  .about-img-profile{
+    width: 70vw;
+  }
+  .about-profile-discription{
+    width: 80vw;
+    text-align: center;
+    align-items: center;
+  }
+}
 @media (max-width: 576px) {
   .navbar {
     height: 60px;
