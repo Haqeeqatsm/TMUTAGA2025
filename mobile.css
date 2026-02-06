@@ -279,6 +279,26 @@ li{
   .component-arches-container{
     padding-inline: 0;
   }
+
+  .component-window-icon{
+    width: 20vw;
+  }
+
+  .circle-window-icon {
+    width: 35vw;
+  }
+
+  .awards-center-container{
+    gap: 2vh;
+  }
+
+  .awards-window-container{
+    padding: 5vh  ;
+  }
+
+  .awards{
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 576px) {
