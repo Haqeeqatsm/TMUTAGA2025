@@ -343,7 +343,7 @@ li{
   .component-bar{
     transform: rotate(90deg);
     margin-top: -20vw;
-    margin-bottom: -30vw;
+    margin-bottom: -20vw;
   }
   .component-bar img{
     height: 35vh;
@@ -365,6 +365,9 @@ li{
     width: 80vw;
     text-align: center;
     align-items: center;
+  }
+  .theses-button.active {
+  width: 50vw;
   }
 }
 @media (max-width: 576px) {

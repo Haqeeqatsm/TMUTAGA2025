@@ -938,12 +938,12 @@ li{
 }
 
 .theses-button.active .audio-progress {
-  width: 200px;
+  width: 100vw;
   opacity: 1;
 }
 
 .audio-progress input[type="range"] {
-  width: 120px;
+  width: 100%;
   -webkit-appearance: none;
   appearance: none;
   height: 6px;
