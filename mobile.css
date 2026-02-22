@@ -369,6 +369,7 @@ li{
   .theses-button.active {
   width: 50vw;
   }
+  
 }
 @media (max-width: 576px) {
   .navbar {
@@ -387,4 +388,5 @@ li{
   .navbar-logo-small {
     width: 40%;
   }
+
 }

@@ -1364,3 +1364,39 @@ li{
 .component-window-icon{
   width: 10%;
 }
+
+/* ------------------ Footer ------------------ */
+.site-footer {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin-top: 10vh;
+  padding: 0;
+  display: block;
+}
+
+.footer-bg-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20vh;
+  gap: 2vh;
+}
+
+.footer-logo img {
+  width: 20vw;
+  height: auto;
+}
+
+.footer-copy{
+  font-size: 12px;
+}
