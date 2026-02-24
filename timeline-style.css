@@ -29,7 +29,7 @@ input[type="radio"] {
     --duration: 200ms;
     --cards-container-size: calc(var(--radius) * 2);
     --cards-container-padding: 2rem;
-    --border-color: rgba(182, 217, 173, 0.3);
+    --border-color: var(--wood-dark);
     --label-offset: calc(var(--radius) * -1 - 1rem);
     --label-size: 30px;
     --label-color: rgba(182, 217, 173, 0.8);
@@ -58,10 +58,6 @@ input[type="radio"] {
 }
 
 @media (min-width: 800px) {
-    .timeline-wrapper {
-        height: calc(var(--radius, 20vw));
-    }
-    
     .cards-container {
         --radius: 30vw;
         --label-size: 40px;
