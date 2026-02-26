@@ -97,6 +97,17 @@
     		</div>
 
         <link rel="stylesheet" href="./timeline-style.css" />
+
+        <!-- Arrow controls -->
+        <div class="timeline-arrows">
+            <button class="timeline-arrow" id="timeline-prev" aria-label="Previous year">
+                <img src="media/arrow-left.svg" alt="Previous">
+            </button>
+            <button class="timeline-arrow" id="timeline-next" aria-label="Next year">
+                <img src="media/arrow-right.svg" alt="Next">
+            </button>
+        </div>
+
         <div class="timeline-wrapper fade-in fade-bottom">
         <div class="cards-container">
             <ul class="cards" style="--items: 17;">
@@ -301,7 +312,24 @@
             </ul>
         </div>
         </div>
-
+        <script>
+        (function () {
+            const total = 17;
+            const radios = Array.from(document.querySelectorAll('input[name="gallery-item"]'));
+            let current = 0;
+        
+            function goTo(index) {
+                current = (index + total) % total;
+                radios[current].checked = true;
+            }
+        
+            document.getElementById('timeline-prev').addEventListener('click', () => goTo(current - 1));
+            document.getElementById('timeline-next').addEventListener('click', () => goTo(current + 1));
+        })();
+        </script>
+        <div class="back-to-top" id="backToTop">
+            <img src="media/arrow-up.svg" alt="Back to top">
+        </div>
   	</div>
 
   	<footer class="site-footer">
@@ -316,7 +344,7 @@
         <p class="footer-copy">Copyright &copy; 2026 TMUTAGA | All rights reserved</p>
       </div>
       
-      <img src="media/footer.svg" alt="Footer decoration" class="footer-bg-svg" />
+      <img src="media/footer.webp" alt="Footer decoration" class="footer-bg-svg" />
     </footer>
 
 </body>

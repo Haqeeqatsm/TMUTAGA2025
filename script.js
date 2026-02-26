@@ -202,68 +202,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------------- TIMELINE ROTATION ---------------- */
-  const cards = document.querySelector('.cards');
-  const radioButtons = document.querySelectorAll('input[type="radio"][name="gallery-item"]');
-  const totalItems = radioButtons.length;
-  
-  if (cards && totalItems > 0) {
-    const anglePerItem = 360 / totalItems;
-    let currentIndex = Array.from(radioButtons).findIndex(r => r.checked);
-    if (currentIndex === -1) currentIndex = 0;
-    let currentRotation = -currentIndex * anglePerItem;
-    let isKeyboardControl = false;
-    
-    // Smooth rotation
-    cards.style.transition = 'transform 0.5s ease';
-    cards.style.transform = `rotate(${currentRotation}deg)`;
-    
-    // Rotate to a target index in a specific direction
-    function rotateToIndex(targetIndex, direction = 'auto') {
-      if (targetIndex === currentIndex) return;
-      
-      let stepsForward = (targetIndex - currentIndex + totalItems) % totalItems;
-      let stepsBackward = (currentIndex - targetIndex + totalItems) % totalItems;
-      let rotationSteps;
-      
-      if (direction === 'forward') {
-        rotationSteps = stepsForward;
-      } else if (direction === 'backward') {
-        rotationSteps = -stepsBackward;
-      } else {
-        rotationSteps = stepsForward <= stepsBackward ? stepsForward : -stepsBackward;
-      }
-      
-      currentRotation -= rotationSteps * anglePerItem;
-      cards.style.transform = `rotate(${currentRotation}deg)`;
-      currentIndex = targetIndex;
+  //* ---------------- TIMELINE ROTATION ---------------- */
+const cards = document.querySelector('.cards');
+const radioButtons = document.querySelectorAll('input[type="radio"][name="gallery-item"]');
+const totalItems = radioButtons.length;
+
+if (cards && totalItems > 0) {
+  const anglePerItem = 360 / totalItems;
+  let currentIndex = Array.from(radioButtons).findIndex(r => r.checked);
+  if (currentIndex === -1) currentIndex = 0;
+  let currentRotation = -currentIndex * anglePerItem;
+
+  cards.style.transition = 'transform 0.5s ease';
+  cards.style.transform = `rotate(${currentRotation}deg)`;
+
+  function rotateToIndex(targetIndex, direction = 'auto') {
+    if (targetIndex === currentIndex) return;
+
+    let stepsForward = (targetIndex - currentIndex + totalItems) % totalItems;
+    let stepsBackward = (currentIndex - targetIndex + totalItems) % totalItems;
+    let rotationSteps;
+
+    if (direction === 'forward') {
+      rotationSteps = stepsForward;
+    } else if (direction === 'backward') {
+      rotationSteps = -stepsBackward;
+    } else {
+      rotationSteps = stepsForward <= stepsBackward ? stepsForward : -stepsBackward;
     }
-    
-    // Radio button clicks
-    radioButtons.forEach((radio, index) => {
-      radio.addEventListener('change', function () {
-        if (this.checked && !isKeyboardControl) {
-          rotateToIndex(index, 'auto');
-        }
-        isKeyboardControl = false;
-      });
-    });
-    
-    // Arrow keys
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') {
-        isKeyboardControl = true;
-        let nextIndex = (currentIndex + 1) % totalItems;
-        radioButtons[nextIndex].checked = true;
-        rotateToIndex(nextIndex, 'forward');
-      } else if (e.key === 'ArrowLeft') {
-        isKeyboardControl = true;
-        let prevIndex = (currentIndex - 1 + totalItems) % totalItems;
-        radioButtons[prevIndex].checked = true;
-        rotateToIndex(prevIndex, 'backward');
-      }
-    });
+
+    currentRotation -= rotationSteps * anglePerItem;
+    cards.style.transform = `rotate(${currentRotation}deg)`;
+    currentIndex = targetIndex;
+    radioButtons[targetIndex].checked = true;
   }
+
+  document.getElementById('timeline-prev').addEventListener('click', () => {
+    rotateToIndex((currentIndex - 1 + totalItems) % totalItems, 'backward');
+  });
+
+  document.getElementById('timeline-next').addEventListener('click', () => {
+    rotateToIndex((currentIndex + 1) % totalItems, 'forward');
+  });
+}
 
   /* ---------------- FADE IN ON SCROLL ANIMATIONS ---------------- */
   const observer = new IntersectionObserver(
