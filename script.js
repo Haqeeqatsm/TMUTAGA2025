@@ -411,6 +411,93 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 /* ---------------- GROUP PHOTO ---------------- */
+setTimeout(() => {
+  const container = document.querySelector(".about-img-associates");
+  if (!container) return;
+
+  const images = [
+    "media/TMUTAGA_2025_web-aliyah-eims1.jpg",
+    "media/TMUTAGA_2025_web-aliyah-eims2.jpg",
+    "media/TMUTAGA_2025_web-scott-krys.jpg",
+    "media/TMUTAGA_2025_web-alicia-mathew.jpg"
+  ];
+
+  let photoIndex = 0;
+  const intervalTime = 4000;
+  let timer;
+  let isTransitioning = false;
+
+  let imgCurrent = document.createElement("img");
+  let imgNext = document.createElement("img");
+
+  imgCurrent.src = images[0];
+  imgCurrent.className = "group-photo-slide current";
+  imgNext.className = "group-photo-slide next";
+
+  container.innerHTML = "";
+  container.appendChild(imgCurrent);
+  container.appendChild(imgNext);
+
+  container.style.zIndex = "10";
+  container.style.cursor = "pointer";
+
+  function preloadNextImage() {
+    const nextIndex = (photoIndex + 1) % images.length;
+    const preload = new Image();
+    preload.src = images[nextIndex];
+  }
+
+  function showNextImage() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    photoIndex = (photoIndex + 1) % images.length;
+    imgNext.src = images[photoIndex];
+
+    imgCurrent.style.transform = "translateX(-100%)";
+    imgNext.style.transform = "translateX(0)";
+
+    setTimeout(() => {
+      imgCurrent.style.transition = "none";
+      imgCurrent.style.transform = "translateX(100%)";
+      void imgCurrent.offsetWidth;
+      imgCurrent.style.transition = "transform 0.6s ease";
+
+      imgCurrent.classList.remove("current");
+      imgCurrent.classList.add("next");
+      imgNext.classList.remove("next");
+      imgNext.classList.add("current");
+
+      [imgCurrent, imgNext] = [imgNext, imgCurrent];
+
+      isTransitioning = false;
+      preloadNextImage();
+    }, 600);
+  }
+
+  function startSlideshow() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(showNextImage, intervalTime);
+  }
+
+  container.addEventListener("click", function() {
+    if (isTransitioning) return;
+    if (timer) clearInterval(timer);
+    showNextImage();
+    setTimeout(() => startSlideshow(), 600);
+  }, true);
+
+  container.addEventListener("mouseenter", () => {
+    if (timer) clearInterval(timer);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    if (!isTransitioning) startSlideshow();
+  });
+
+  preloadNextImage();
+  startSlideshow();
+}, 500);
 /* ---------------- GROUP PHOTO ---------------- */
 setTimeout(() => {
   const container = document.querySelector(".about-img-groupPhoto");
