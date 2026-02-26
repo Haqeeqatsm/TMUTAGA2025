@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 1028px) {
   .text-logo {
     display: none; 
   }
@@ -387,6 +387,14 @@ li{
 
   .navbar-logo-small {
     width: 40%;
+  }
+
+  .join-us-container {
+    flex-direction: column;
+  }
+
+  .theses-nav{
+    display: none;
   }
 
 }

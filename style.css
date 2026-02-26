@@ -526,6 +526,7 @@ li{
   flex-direction: column;
   gap: 15%;
   justify-content: center;
+  width: 25vw;
 }
 .about-vision-text {
   align-self: center;
@@ -537,7 +538,11 @@ li{
   align-items: center;
   text-align: center;
 }
+.component-long-frame{
+  align-self: center;
+}
 .component-long-frame-flipped {
+  align-self: center;
   transform-origin: center;
   transform: rotate(180deg);
   padding-bottom: 5%;
@@ -562,6 +567,7 @@ li{
   flex-direction: column;
   gap: 15%;
   justify-content: center;
+  width: 25vw;
 }
 .about-goal-body {
   text-align: center;
@@ -652,13 +658,30 @@ li{
   gap: 5%;
 
 }
-.img-associates {
-  background: #d9d9d9;
-  border-radius: 10px;
-  flex-shrink: 0;
-  width: 30vw;
-  height: 60vh;
+.about-img-associates {
+  width: 50vw;
+  aspect-ratio: 1 / 1;
+  float: right;
+  margin-left: 34px;
+  margin-bottom: 20px;
+  shape-outside: margin-box;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 12px;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  z-index: 10; /* Added */
+}
+
+.about-img-associates:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.about-img-associates:active {
+  transform: scale(0.98);
 }
 .about-associates-container {
   display: flex;
