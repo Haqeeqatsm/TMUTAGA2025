@@ -1,10 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theses | TMUTAGA</title>
+
+    <!-- ===================== SEO: TITLE & META ===================== -->
+    <title>Student Theses 2025 | TMUTAGA — GCM Research Papers, Toronto Metropolitan University</title>
+    <meta name="description" content="Read and listen to the 2025 graduating class thesis research papers from TMU's Graphic Communications Management program — featured in the TMUTAGA journal for the TAGA Helmut Kipphan Cup competition." />
+    <meta name="author" content="TMUTAGA" />
+    <link rel="canonical" href="https://tmutaga.ca/theses.html" />
+
+    <!-- ===================== SEO: OPEN GRAPH ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Student Theses 2025 | TMUTAGA GCM Research Papers" />
+    <meta property="og:description" content="Explore 2025 thesis research from TMU's Graphic Communications Management graduating class — covering mycelium bioplastics, accessible packaging, visual crisis communication, life cycle analysis, and wide-format printing." />
+    <meta property="og:url" content="https://tmutaga.ca/theses.html" />
+    <meta property="og:image" content="https://tmutaga.ca/media/small-logo.svg" />
+    <meta property="og:site_name" content="TMUTAGA" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- ===================== SEO: TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Student Theses 2025 | TMUTAGA GCM Research Papers" />
+    <meta name="twitter:description" content="2025 thesis research from TMU's Graphic Communications Management graduating class, featured in the TMUTAGA TAGA journal." />
+    <meta name="twitter:image" content="https://tmutaga.ca/media/small-logo.svg" />
+
+    <!-- ===================== SEO: STRUCTURED DATA ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "TMUTAGA 2025 Student Theses",
+      "url": "https://tmutaga.ca/theses.html",
+      "description": "Student thesis research papers from the 2025 graduating class of Toronto Metropolitan University's Graphic Communications Management program, featured in the TMUTAGA annual journal.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TMUTAGA",
+        "url": "https://tmutaga.ca"
+      },
+      "hasPart": [
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Characterizing the Thermal Properties of Mycelium-Based Bioplastic Through Composite Material Integration",
+          "author": { "@type": "Person", "name": "Sasha Au-Yong" },
+          "publisher": { "@type": "Organization", "name": "TMUTAGA" },
+          "datePublished": "2025",
+          "inLanguage": "en-CA",
+          "isPartOf": { "@type": "Book", "name": "TMUTAGA 2026 Journal" }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Accessibility as an Afterthought: Addressing Packaging Design Misconceptions in the Consumer Packaged Goods Industry",
+          "author": { "@type": "Person", "name": "Umme Abiha" },
+          "publisher": { "@type": "Organization", "name": "TMUTAGA" },
+          "datePublished": "2025",
+          "inLanguage": "en-CA",
+          "isPartOf": { "@type": "Book", "name": "TMUTAGA 2026 Journal" }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Visual Instructional Design and Crisis Communication: Exploring the Use of Visual Language to Enhance Information Accessibility Without Dependence on Written Text",
+          "author": { "@type": "Person", "name": "Daniela Bonilla-Flamenco" },
+          "publisher": { "@type": "Organization", "name": "TMUTAGA" },
+          "datePublished": "2025",
+          "inLanguage": "en-CA",
+          "isPartOf": { "@type": "Book", "name": "TMUTAGA 2026 Journal" }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "The Environmental Impact of Paper Bubble Tea Cups in Comparison to Their Previous Plastic Counterpart: A Comprehensive Life Cycle Analysis",
+          "author": { "@type": "Person", "name": "Jacky Luo" },
+          "publisher": { "@type": "Organization", "name": "TMUTAGA" },
+          "datePublished": "2025",
+          "inLanguage": "en-CA",
+          "isPartOf": { "@type": "Book", "name": "TMUTAGA 2026 Journal" }
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Enhancing Personalization in Wide Format Printing through Automated Workflows: A Comparative Analysis of Sticker Builder and Adobe Actions",
+          "author": { "@type": "Person", "name": "Sarib Nazir" },
+          "publisher": { "@type": "Organization", "name": "TMUTAGA" },
+          "datePublished": "2025",
+          "inLanguage": "en-CA",
+          "isPartOf": { "@type": "Book", "name": "TMUTAGA 2026 Journal" }
+        }
+      ]
+    }
+    </script>
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./vars.css" />
@@ -15,7 +99,7 @@
     <!-- JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
-	<!-- Icon -->
+    <!-- Icon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -25,21 +109,15 @@
       <span class="logo-gradient">TMUTAGA</span>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
       <div class="container-fluid">
-        <!-- Small logo (fades in from right when sticky) -->
         <a href="index.html" id="logo-link" class="navbar-logo-small">
-          <img src="media/small-logo.svg" alt="TMUTAGA" id="logo">
+          <img src="media/small-logo.svg" alt="TMUTAGA Home" id="logo-small">
         </a>
-
-
-        <!-- Toggler button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav text-center">
             <li class="nav-item">
@@ -52,7 +130,7 @@
               <a class="nav-link nav-donors" href="donors.html">donors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-theses" href="theses.html">theses</a>
+              <a class="nav-link nav-theses" href="theses.html" aria-current="page">theses</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-archive" href="archive.html">archive</a>
@@ -66,7 +144,7 @@
 		
 		<div class="theses-hero">
 			<h1>Student Theses</h1>
-			<p class="caption">Take a look at this year’s student research papers from the graduating class of 2025.</p>
+			<p class="caption">Take a look at this year's student research papers from the graduating class of 2025.</p>
 		</div>
 
     	<div class="theses-preview sashaPreviewContainer fade-in fade-bottom" data-target="sashaPreviewContainer">
@@ -76,21 +154,17 @@
 		        Characterizing the Thermal Properties of Mycelium-Based Bioplastic Through Composite Material Integration
 		      </h4>
 		      <p class="dark">Sasha Au-Yong</p>
-		  
-		      <div class="theses-button" data-audio="media/temp.mp3">
+		      <div class="theses-button" data-audio="media/SashaAuYong-Thesis Recording.mp4">
 		        <p>Listen</p>
-			
 		        <div class="audio-progress">
 		          <span class="time current small">0:00</span>
 		          <input type="range" value="0" min="0" step="1">
 		          <span class="time duration small">0:00</span>
 		        </div>
-			
-		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+		        <img class="play-icon" src="media/play-button.svg" alt="Play audio for Sasha Au-Yong thesis">
 		      </div>
 		    </div>
-		
-		    <img class="theses-glass" src="media/sasha-glass.svg" alt="">
+		    <img class="theses-glass" src="media/sasha-glass.svg" alt="" role="presentation">
 		  </div>
 		</div>
 
@@ -102,20 +176,17 @@
 		        Addressing Packaging Design Misconceptions in the Consumer Packaged Goods Industry
 		      </h4>
 		      <p class="dark">Umme Abiha</p>
-		  
-		      <div class="theses-button" data-audio="media/temp.mp3">
+		      <div class="theses-button" data-audio="media/UmmeAbiha-Thesis Recording.mp4">
 		        <p>Listen</p>
-			
 		        <div class="audio-progress">
 		          <span class="time current small">0:00</span>
 		          <input type="range" value="0" min="0" step="1">
 		          <span class="time duration small">0:00</span>
 		        </div>
-			
-		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+		        <img class="play-icon" src="media/play-button.svg" alt="Play audio for Umme Abiha thesis">
 		      </div>
 		    </div>
-		    <img class="theses-glass" src="media/umme-glass.svg" alt="">
+		    <img class="theses-glass" src="media/umme-glass.svg" alt="" role="presentation">
 		  </div>
 		</div>
 
@@ -126,20 +197,17 @@
 		        Visual Instructional Design and Crisis Communication: Exploring the Use of Visual Language to Enhance Information Accessibility Without Dependence on Written Text
 		      </h4>
 		      <p class="dark">Daniela Bonilla-Flamenco</p>
-		  
-		      <div class="theses-button" data-audio="media/temp.mp3">
+		      <div class="theses-button" data-audio="media/DanielaBonillaFlamenco-Thesis Recording.mp4">
 		        <p>Listen</p>
-			
 		        <div class="audio-progress">
 		          <span class="time current small">0:00</span>
 		          <input type="range" value="0" min="0" step="1">
 		          <span class="time duration small">0:00</span>
 		        </div>
-			
-		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+		        <img class="play-icon" src="media/play-button.svg" alt="Play audio for Daniela Bonilla-Flamenco thesis">
 		      </div>
 		    </div>
-		    <img class="theses-glass" src="media/daniela-glass.svg" alt="">
+		    <img class="theses-glass" src="media/daniela-glass.svg" alt="" role="presentation">
 		  </div>
 		</div>
 
@@ -151,20 +219,17 @@
 		        A Comprehensive Life Cycle Analysis
 		      </h4>
 		      <p class="dark">Jacky Luo</p>
-		  
 		      <div class="theses-button" data-audio="media/JackyL.mp3">
 		        <p>Listen</p>
-			
 		        <div class="audio-progress">
 		          <span class="time current small">0:00</span>
 		          <input type="range" value="0" min="0" step="1">
 		          <span class="time duration small">0:00</span>
 		        </div>
-			
-		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+		        <img class="play-icon" src="media/play-button.svg" alt="Play audio for Jacky Luo thesis">
 		      </div>
 		    </div>
-		    <img class="theses-glass" src="media/jacky-glass.svg" alt="">
+		    <img class="theses-glass" src="media/jacky-glass.svg" alt="" role="presentation">
 		  </div>
 		</div>
 
@@ -175,29 +240,26 @@
 		        Enhancing Personalization in Wide Format Printing through Automated Workflows: A Comparative Analysis of Sticker Builder and Adobe Actions
 		      </h4>
 		      <p class="dark">Sarib Nazir</p>
-		  
 		      <div class="theses-button" data-audio="media/SaribN.mp3">
 		        <p>Listen</p>
-			
 		        <div class="audio-progress">
 		          <span class="time current small">0:00</span>
 		          <input type="range" value="0" min="0" step="1">
 		          <span class="time duration small">0:00</span>
 		        </div>
-			
-		        <img class="play-icon" src="media/play-button.svg" alt="Play">
+		        <img class="play-icon" src="media/play-button.svg" alt="Play audio for Sarib Nazir thesis">
 		      </div>
 		    </div>
-		    <img class="theses-glass" src="media/sarib-glass.svg" alt="">
+		    <img class="theses-glass" src="media/sarib-glass.svg" alt="" role="presentation">
 		  </div>
 		</div>
 
-		<div class="theses-nav">
-    		<img class="sasha-icon theses-icon" alt="" id="sashaIcon" src="media/sasha-icon.svg">
-			<img class="umme-icon theses-icon" alt="" id="ummeIcon" src="media/umme-icon.svg">
-    		<img class="daniela-icon theses-icon" alt="" id="danielaIcon" src="media/daniela-icon.svg">
-    		<img class="jacky-icon theses-icon" alt="" id="jackyIcon" src="media/jacky-icon.svg">
-    		<img class="sarib-icon theses-icon" alt="" id="saribIcon" src="media/sarib-icon.svg">
+		<div class="theses-nav" aria-label="Navigate theses">
+    		<img class="sasha-icon theses-icon" alt="Sasha Au-Yong" id="sashaIcon" src="media/sasha-icon.svg">
+			<img class="umme-icon theses-icon" alt="Umme Abiha" id="ummeIcon" src="media/umme-icon.svg">
+    		<img class="daniela-icon theses-icon" alt="Daniela Bonilla-Flamenco" id="danielaIcon" src="media/daniela-icon.svg">
+    		<img class="jacky-icon theses-icon" alt="Jacky Luo" id="jackyIcon" src="media/jacky-icon.svg">
+    		<img class="sarib-icon theses-icon" alt="Sarib Nazir" id="saribIcon" src="media/sarib-icon.svg">
 		</div>
 
 		<div class="back-to-top" id="backToTop">
@@ -208,19 +270,16 @@
 
 	<!-- GLOBAL AUDIO -->
 	<audio id="globalAudio"></audio>
-	<footer class="site-footer">
 
+	<footer class="site-footer">
       <div class="footer-content">
         <!-- Logo -->
-        <a href="index.html" id="logo-link" class="footer-logo">
-          <img src="media/small-logo.svg" alt="TMUTAGA" />
+        <a href="index.html" id="logo-link" class="footer-logo" aria-label="TMUTAGA Home">
+          <img src="media/small-logo.svg" alt="TMUTAGA logo" />
         </a>
-      
-        <!-- Copyright -->
         <p class="footer-copy">Copyright &copy; 2026 TMUTAGA | All rights reserved</p>
       </div>
-      
-      <img src="media/footer.svg" alt="Footer decoration" class="footer-bg-svg" />
+      <img src="media/footer.webp" alt="" role="presentation" class="footer-bg-svg" />
     </footer>
 </body>
 </html>

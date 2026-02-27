@@ -104,8 +104,8 @@ input[type="radio"] {
     margin: auto;
     transform: translateY(var(--label-offset));
     height: var(--label-size);
-    cursor: pointer;
-    pointer-events: initial;
+    cursor: default;
+    pointer-events: none;
     text-align: center;
     color: var(--label-color);
     transition: var(--duration) ease-in-out;
@@ -230,3 +230,44 @@ li:has(input:checked) > h2 {
     }
 }
 
+/* ── Arrow controls (addition only) ── */
+.timeline-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: -4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.timeline-arrow {
+    background: none;
+    border: 2px solid rgba(182, 217, 173, 0.5);
+    color: rgba(182, 217, 173, 0.8);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
+    overflow: visible;
+    padding: 8px;
+}
+
+.timeline-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.timeline-arrow:hover {
+    border-color: #F6B0BB;
+    color: #F6B0BB;
+    transform: scale(1.1);
+}
+
+.timeline-arrow:active {
+    transform: scale(0.95);
+}

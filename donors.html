@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donors | TMUTAGA</title>
+
+    <!-- ===================== SEO: TITLE & META ===================== -->
+    <title>Donors & Sponsors | TMUTAGA 2025–26 | TMU Graphic Communications Management</title>
+    <meta name="description" content="TMUTAGA thanks its generous donors and sponsors — including Konica Minolta, Sappi, Hemlock, Landa, Toronto Metropolitan University, and more — for supporting our GCM thesis journal and TAGA conference travel." />
+    <meta name="author" content="TMUTAGA" />
+    <link rel="canonical" href="https://tmutaga.ca/donors.html" />
+
+    <!-- ===================== SEO: OPEN GRAPH ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Donors & Sponsors | TMUTAGA 2025–26" />
+    <meta property="og:description" content="Meet the sponsors supporting TMUTAGA's annual GCM thesis journal and TAGA conference. Interested in becoming a donor? Contact us at tmutaga@torontomu.ca." />
+    <meta property="og:url" content="https://tmutaga.ca/donors.html" />
+    <meta property="og:image" content="https://tmutaga.ca/media/small-logo.svg" />
+    <meta property="og:site_name" content="TMUTAGA" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- ===================== SEO: TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Donors & Sponsors | TMUTAGA 2025–26" />
+    <meta name="twitter:description" content="Meet the sponsors supporting TMUTAGA's annual GCM thesis journal and TAGA conference." />
+    <meta name="twitter:image" content="https://tmutaga.ca/media/small-logo.svg" />
+
+    <!-- ===================== SEO: STRUCTURED DATA ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "TMUTAGA Donors & Sponsors",
+      "url": "https://tmutaga.ca/donors.html",
+      "description": "Donors and sponsors supporting TMUTAGA — Toronto Metropolitan University's TAGA student chapter — in producing the annual Graphic Communications Management thesis journal.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TMUTAGA",
+        "url": "https://tmutaga.ca"
+      },
+      "sponsor": [
+        { "@type": "Organization", "name": "Toronto Metropolitan University", "url": "https://www.torontomu.ca" },
+        { "@type": "Organization", "name": "Konica Minolta" },
+        { "@type": "Organization", "name": "Sappi" },
+        { "@type": "Organization", "name": "Hemlock" },
+        { "@type": "Organization", "name": "Landa" },
+        { "@type": "Organization", "name": "Marquis" },
+        { "@type": "Organization", "name": "Spicers" },
+        { "@type": "Organization", "name": "Brodnax" },
+        { "@type": "Organization", "name": "Proprint" },
+        { "@type": "Organization", "name": "Penguin Random House" },
+        { "@type": "Organization", "name": "Society of the Creative School" },
+        { "@type": "Organization", "name": "Student Initiatives Fund" },
+        { "@type": "Organization", "name": "KK Puri" },
+        { "@type": "Organization", "name": "GCM Program, Toronto Metropolitan University" }
+      ]
+    }
+    </script>
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./vars.css" />
@@ -26,21 +79,15 @@
       <span class="logo-gradient">TMUTAGA</span>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
       <div class="container-fluid">
-        <!-- Small logo (fades in from right when sticky) -->
         <a href="index.html" id="logo-link" class="navbar-logo-small">
-          <img src="media/small-logo.svg" alt="TMUTAGA" id="logo">
+          <img src="media/small-logo.svg" alt="TMUTAGA Home" id="logo-small">
         </a>
-
-
-        <!-- Toggler button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav text-center">
             <li class="nav-item">
@@ -50,7 +97,7 @@
               <a class="nav-link nav-awards" href="awards.html">awards</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-donors" href="donors.html">donors</a>
+              <a class="nav-link nav-donors" href="donors.html" aria-current="page">donors</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-theses" href="theses.html">theses</a>
@@ -71,90 +118,89 @@
     
       <!-- Donors Grid -->
       <div class="container">
-        <!-- Single row that wraps and centers -->
         <div class="row g-4 text-center justify-content-center fade-in fade-bottom">
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/KK_Puri_logo.png" class="img-fluid mb-2">
+                <img src="media/KK_Puri_logo.png" class="img-fluid mb-2" alt="KK Puri — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Society_of_the_Creative_School_logo.png" class="img-fluid mb-2">
+                <img src="media/Society_of_the_Creative_School_logo.png" class="img-fluid mb-2" alt="Society of the Creative School — TMUTAGA Sponsor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Student_Initiatives_Fund_logo.png" class="img-fluid mb-2">
+                <img src="media/Student_Initiatives_Fund_logo.png" class="img-fluid mb-2" alt="Student Initiatives Fund — TMUTAGA Sponsor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/torontomu_logo.png" class="img-fluid mb-2">
+                <img src="media/torontomu_logo.png" class="img-fluid mb-2" alt="Toronto Metropolitan University — TMUTAGA Sponsor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/gcm_logo.png" class="img-fluid mb-2">
+                <img src="media/gcm_logo.png" class="img-fluid mb-2" alt="Graphic Communications Management, TMU — TMUTAGA Sponsor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Brodnax_logo.svg" class="img-fluid mb-2">
+                <img src="media/Brodnax_logo.svg" class="img-fluid mb-2" alt="Brodnax — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/PRH_logoogo.png" class="img-fluid mb-2">
+                <img src="media/PRH_logoogo.png" class="img-fluid mb-2" alt="Penguin Random House — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Proprint_logo.png" class="img-fluid mb-2">
+                <img src="media/Proprint_logo.png" class="img-fluid mb-2" alt="Proprint — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Konica_Minolta_logo.png" class="img-fluid mb-2">
+                <img src="media/Konica_Minolta_logo.png" class="img-fluid mb-2" alt="Konica Minolta — TMUTAGA Sponsor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Hemlock-logo.png" class="img-fluid mb-2">
+                <img src="media/Hemlock-logo.png" class="img-fluid mb-2" alt="Hemlock — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Landa-logo.png" class="img-fluid mb-2">
+                <img src="media/Landa-logo.png" class="img-fluid mb-2" alt="Landa — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/marquis-logo.png" class="img-fluid mb-2">
+                <img src="media/marquis-logo.png" class="img-fluid mb-2" alt="Marquis — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Spicers-logo.png" class="img-fluid mb-2">
+                <img src="media/Spicers-logo.png" class="img-fluid mb-2" alt="Spicers — TMUTAGA Donor">
               </div>
             </div>
           
             <div class="col-6 col-sm-4 col-md-2">
               <div class="donor-card-glass">
-                <img src="media/Sappi-logo.svg" class="img-fluid mb-2">
+                <img src="media/Sappi-logo.svg" class="img-fluid mb-2" alt="Sappi — TMUTAGA Donor">
               </div>
             </div>
           
@@ -163,10 +209,9 @@
     </div>
 
     <div class="join-us-container fade-in fade-top">
-
-      <div class="component-left-corner-container">
-          <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-          <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+      <div class="component-left-corner-container-donors">
+          <div class="component-tiny-arch-top-donors"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+          <div class="component-tiny-arch-donors"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
       </div>
 
       <div class="join-us">
@@ -176,33 +221,31 @@
           <br>We appreciate all forms of donations including software, materials, expertise, or assistance during the production of our journal publication. ​ 
           If you are interested in supporting our team, please contact us using the button below. <br>Thank you!
         </p>
-      
-        <!-- Contact Us Button -->
-        <button class="contact-button">
+        <a href="mailto:tmutaga@torontomu.ca" class="contact-button" aria-label="Contact TMUTAGA about becoming a donor">
           <span class="button-text">Contact Us</span>
           <span class="button-gradient">Contact Us</span>
-        </button>
+        </a>
       </div>
 
-      <div class="component-right-corner-container">
-        <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-        <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+      <div class="component-right-corner-container-donors">
+        <div class="component-tiny-arch-top-donors"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+        <div class="component-tiny-arch-donors"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
       </div>
-
     </div>
-  <footer class="site-footer">
 
+    <div class="back-to-top" id="backToTop">
+      <img src="media/arrow-up.svg" alt="Back to top">
+    </div>
+
+    <footer class="site-footer">
       <div class="footer-content">
         <!-- Logo -->
-        <a href="index.html" id="logo-link" class="footer-logo">
-          <img src="media/small-logo.svg" alt="TMUTAGA" />
+        <a href="index.html" id="logo-link" class="footer-logo" aria-label="TMUTAGA Home">
+          <img src="media/small-logo.svg" alt="TMUTAGA logo" />
         </a>
-      
-        <!-- Copyright -->
         <p class="footer-copy">Copyright &copy; 2026 TMUTAGA | All rights reserved</p>
       </div>
-      
-      <img src="media/footer.svg" alt="Footer decoration" class="footer-bg-svg" />
+      <img src="media/footer.webp" alt="" role="presentation" class="footer-bg-svg" />
     </footer>
 </body>
 </html>

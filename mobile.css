@@ -369,7 +369,54 @@ li{
   .theses-button.active {
   width: 50vw;
   }
-  
+
+  .theses-nav{
+    display: none;
+  }
+
+  .about-img-groupPhoto {
+    width: 70vw;
+  }
+
+  .component-right-corner-container {
+    flex-direction: row;
+    width: 90vw;
+    transform: scaleY(-1);
+  }
+
+  .about-associates{
+    flex-direction: column;
+  }
+
+  .component-border img{
+    height: 45vh;
+    transform: rotate(90deg);
+    margin: -15vh 0 -15vh 0;
+  }
+
+  .about-img-associates {
+    width: 70vw;
+  }
+
+  .about-associates-grid {
+    text-align: center;
+    gap: 0;
+  }
+
+  .about-production-associates,
+  .about-marketing-associates,
+  .about-multimedia-associates,
+  .about-creative-associates,
+  .about-editorial-associates {
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
+  .home-hero-inner{
+    flex-direction: column;
+    gap: 10vh;
+  }
+
 }
 @media (max-width: 576px) {
   .navbar {

@@ -4,7 +4,72 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | TMUTAGA</title>
+
+    <!-- ===================== SEO: TITLE & META ===================== -->
+    <title>About Us | TMUTAGA 2025–26 Team | TMU Graphic Communications Management</title>
+    <meta name="description" content="Meet the TMUTAGA 2025–26 executive team and associates — Toronto Metropolitan University's only Canadian TAGA student chapter. Students from the GCM program producing the annual Helmut Kipphan Cup journal." />
+    <meta name="author" content="TMUTAGA" />
+    <link rel="canonical" href="https://tmutaga.ca/about.html" />
+
+    <!-- ===================== SEO: OPEN GRAPH ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About TMUTAGA | TMU's TAGA Student Chapter 2025–26" />
+    <meta property="og:description" content="Meet the TMUTAGA 2025–26 team — students from Toronto Metropolitan University's Graphic Communications Management program competing in the TAGA Helmut Kipphan Cup." />
+    <meta property="og:url" content="https://tmutaga.ca/about.html" />
+    <meta property="og:image" content="https://tmutaga.ca/media/TMUTAGA_2025_web-aliyah-eims1.jpg" />
+    <meta property="og:site_name" content="TMUTAGA" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- ===================== SEO: TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About TMUTAGA | TMU's TAGA Student Chapter 2025–26" />
+    <meta name="twitter:description" content="Meet the TMUTAGA 2025–26 team from Toronto Metropolitan University's Graphic Communications Management program." />
+    <meta name="twitter:image" content="https://tmutaga.ca/media/TMUTAGA_2025_web-aliyah-eims1.jpg" />
+
+    <!-- ===================== SEO: STRUCTURED DATA ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About TMUTAGA",
+      "url": "https://tmutaga.ca/about.html",
+      "description": "About the TMUTAGA 2025-26 student chapter — Toronto Metropolitan University's only Canadian TAGA chapter, producing the annual GCM thesis journal for the Helmut Kipphan Cup competition.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TMUTAGA",
+        "url": "https://tmutaga.ca"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TMUTAGA",
+      "url": "https://tmutaga.ca",
+      "description": "TMUTAGA is the only Canadian student chapter of the Technical Association of the Graphic Arts (TAGA), based at Toronto Metropolitan University's School of Graphic Communications Management.",
+      "foundingDate": "2006",
+      "email": "tmutaga@torontomu.ca",
+      "member": [
+        { "@type": "Person", "name": "Aliyah", "jobTitle": "President" },
+        { "@type": "Person", "name": "Eimmie Chan", "jobTitle": "Vice-President" },
+        { "@type": "Person", "name": "Yi Jia", "jobTitle": "Finance Director" },
+        { "@type": "Person", "name": "Matthew", "jobTitle": "Creative Director" },
+        { "@type": "Person", "name": "Alyssa", "jobTitle": "Production Director" },
+        { "@type": "Person", "name": "Nicole", "jobTitle": "Editorial Director" },
+        { "@type": "Person", "name": "Alicia", "jobTitle": "Multimedia Director" },
+        { "@type": "Person", "name": "Jeevana", "jobTitle": "Marketing Director" },
+        { "@type": "Person", "name": "Krzysztof Krystosiak", "jobTitle": "Faculty Advisor" },
+        { "@type": "Person", "name": "Scott", "jobTitle": "Faculty Advisor" }
+      ],
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "Toronto Metropolitan University",
+        "url": "https://www.torontomu.ca"
+      }
+    }
+    </script>
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./vars.css" />
@@ -17,6 +82,8 @@
     <script src="script.js" defer></script>
     <!-- Icon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="media/icon-192.png">
+
   </head>
   <body>
 
@@ -26,25 +93,19 @@
       <span class="logo-gradient">TMUTAGA</span>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
       <div class="container-fluid">
-        <!-- Small logo (fades in from right when sticky) -->
         <a href="index.html" id="logo-link" class="navbar-logo-small">
-          <img src="media/small-logo.svg" alt="TMUTAGA" id="logo">
+          <img src="media/small-logo.svg" alt="TMUTAGA Home" id="logo-small">
         </a>
-
-
-        <!-- Toggler button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav text-center">
             <li class="nav-item">
-              <a class="nav-link nav-aboutus" href="about.html">about us</a>
+              <a class="nav-link nav-aboutus" href="about.html" aria-current="page">about us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-awards" href="awards.html">awards</a>
@@ -67,32 +128,32 @@
       <div class="about-hero-container">
         <div class="component-arches-container fade-in fade-top">
           <div class="component-small-arch-right">
-            <img src="media/component-smallArch.svg" />
+            <img src="media/component-smallArch.svg" alt="" role="presentation" />
           </div>
           <div class="component-small-arch">
-            <img src="media/component-smallArch.svg" />
+            <img src="media/component-smallArch.svg" alt="" role="presentation" />
           </div>
         </div>
         <div class="about-hero fade-in fade-bottom">
           <h1 class="hero-title">ABOUT US</h1>
           <div class="about-hero-text">
             <div class="about-img-groupPhoto fade-in fade-bottom">
-              <img id="groupPhoto" src="media/TMUTAGA_2025_web-aliyah-eims1.jpg" alt="TMUTAGA group photo"/>
+              <img id="groupPhoto" src="media/TMUTAGA_2025_web-aliyah-eims1.jpg"
+                   alt="TMUTAGA 2025–26 team group photo — TMU Graphic Communications Management students"/>
             </div>
             <p class="hero-body">
               TMUTAGA is the only Canadian student chapter of the Technical
-              Association of the Graphic Arts, representing The School of
-              Graphic Communications Management at The Creative School within
+              Association of the Graphic Arts (TAGA), representing The School of
+              Graphic Communications Management (GCM) at The Creative School within
               Toronto Metropolitan University (formerly Ryerson).
               <br/><br/>
               Entirely student-run with the guidance of a faculty advisor, we
-              produce a technical journal that is entered into the Helmut
-              Kipphan Cup student competition against other schools around the
-              world. The journal is created entirely by the efforts of our
-              students from the selection of papers, to design and layout, to
-              production, and more. Each year, we present our journal to
-              industry professionals at TAGA's Annual Technical Conference. In
-              2024, we are excited to expand our journey to include packaging
+              produce a technical journal entered into the Helmut Kipphan Cup
+              student competition against other schools around the world. The
+              journal is created entirely by our students — from paper selection,
+              to design and layout, to production and more. Each year, we present
+              our journal to industry professionals at TAGA's Annual Technical
+              Conference. In 2024, we expanded our scope to include packaging
               and t-shirt design.
             </p>
           </div>
@@ -101,75 +162,71 @@
 
       <div class="about-goal">
         <div class="component-leaf-down fade-in fade-bottom">
-          <div class="leaf"><img src="media/leaf-1.svg" /></div>
-          <div class="leaf"><img src="media/leaf-2.svg" /></div>
-          <div class="leaf"><img src="media/leaf-3.svg" /></div>
+          <div class="leaf"><img src="media/leaf-1.svg" alt="" role="presentation" /></div>
+          <div class="leaf"><img src="media/leaf-2.svg" alt="" role="presentation" /></div>
+          <div class="leaf"><img src="media/leaf-3.svg" alt="" role="presentation" /></div>
         </div>
 
         <div class="about-vision fade-in fade-left">
-          
-          <div class="component-long-frame"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame"><img src="media/component-longFrame.svg" alt="" role="presentation" /></div>
           <div class="about-vision-text">
             <h2>Our Vision</h2>
             <p class="caption about-goal-body">
               To showcase the amazing work and research of Toronto Metropolitan
-              University’s Graphic Communications Management students across
+              University's Graphic Communications Management students across
               various graphic arts industries.
-              <br />
             </p>
           </div>
-          <div class="component-long-frame-flipped"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame-flipped"><img src="media/component-longFrame.svg" alt="" role="presentation" /></div>
         </div>
 
-        <div class="component-pillar fade-in fade-bottom"><img src="media/component-pillar.svg" /></div>
+        <div class="component-pillar fade-in fade-bottom"><img src="media/component-pillar.svg" alt="" role="presentation" /></div>
 
         <div class="about-mission fade-in fade-right">
-          <div class="component-long-frame"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame"><img src="media/component-longFrame.svg" alt="" role="presentation" /></div>
           <div class="about-mission-text">
             <h2>Our Mission</h2>
             <p class="caption about-goal-body">
               To promote the work of Graphic Communications Management and The
               Creative School students to a wider audience beyond the student body
               of Toronto Metropolitan University.
-              <br />
             </p>
           </div>
-          <div class="component-long-frame-flipped"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame-flipped"><img src="media/component-longFrame.svg" alt="" role="presentation" /></div>
         </div>
 
         <div class="component-leaf-down fade-in fade-bottom">
-          <div class="leaf"><img src="media/leaf-4.svg" /></div>
-          <div class="leaf"><img src="media/leaf-5.svg" /></div>
-          <div class="leaf"><img src="media/leaf-6.svg" /></div>
+          <div class="leaf"><img src="media/leaf-4.svg" alt="" role="presentation" /></div>
+          <div class="leaf"><img src="media/leaf-5.svg" alt="" role="presentation" /></div>
+          <div class="leaf"><img src="media/leaf-6.svg" alt="" role="presentation" /></div>
         </div>
       </div>
 
       <div class="component-divider">
-        <!-- Left 4 gates -->
-        <div class="component-gate fade-in fade-top stagger"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.2s"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.4s"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.6s"><img src="media/component-gate.svg" /></div>
-
-        <!-- Circle -->
-        <div class="component-circle-window fade-in stagger" style="--delay:0.7s"><img src="media/component-circle-window.svg" /></div>
-
-        <!-- Right 4 gates -->
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.6s"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.4s"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger" style="--delay:0.2s"><img src="media/component-gate.svg" /></div>
-        <div class="component-gate fade-in fade-top stagger"><img src="media/component-gate.svg" /></div>
+        <div class="component-gate fade-in fade-top stagger"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.2s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.4s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.6s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-circle-window fade-in stagger" style="--delay:0.7s"><img src="media/component-circle-window.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.6s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.4s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger" style="--delay:0.2s"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
+        <div class="component-gate fade-in fade-top stagger"><img src="media/component-gate.svg" alt="" role="presentation" /></div>
       </div>
+
+      <!-- ===== EXECUTIVE TEAM ===== -->
 
       <!-- Aliyah - President -->
       <div class="about-profile fade-in fade-left">
         <div class="about-profile-container">
           <div class="component-left-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Aliyah.jpg" /></div>
-          <div class="component-bar"><img src="media/bar.svg" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Aliyah.jpg" alt="Aliyah, TMUTAGA President 2025–26" />
+          </div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
         </div>
         <div class="about-mission">
           <div class="about-profile-discription">
@@ -198,11 +255,13 @@
           </p>
         </div>
         <div class="about-profile-container">
-          <div class="component-bar"><img src="media/bar.svg" /></div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Eimmie.jpg" /></div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Eimmie.jpg" alt="Eimmie, TMUTAGA Vice-President 2025–26" />
+          </div>
           <div class="component-right-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
         </div>
       </div>
@@ -211,11 +270,13 @@
       <div class="about-profile fade-in fade-left">
         <div class="about-profile-container">
           <div class="component-left-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-YiJia.jpg" /></div>
-          <div class="component-bar"><img src="media/bar.svg" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-YiJia.jpg" alt="Yi Jia, TMUTAGA Finance Director 2025–26" />
+          </div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
         </div>
         <div class="about-mission">
           <div class="about-profile-discription">
@@ -244,11 +305,13 @@
           </p>
         </div>
         <div class="about-profile-container">
-          <div class="component-bar"><img src="media/bar.svg" /></div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Matthew.jpg" /></div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Matthew.jpg" alt="Matthew, TMUTAGA Creative Director 2025–26" />
+          </div>
           <div class="component-right-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
         </div>
       </div>
@@ -257,11 +320,13 @@
       <div class="about-profile fade-in fade-left">
         <div class="about-profile-container">
           <div class="component-left-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Alyssa.jpg" /></div>
-          <div class="component-bar"><img src="media/bar.svg" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Alyssa.jpg" alt="Alyssa, TMUTAGA Production Director 2025–26" />
+          </div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
         </div>
         <div class="about-mission">
           <div class="about-profile-discription">
@@ -290,11 +355,13 @@
           </p>
         </div>
         <div class="about-profile-container">
-          <div class="component-bar"><img src="media/bar.svg" /></div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Nicole.jpg" /></div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Nicole.jpg" alt="Nicole, TMUTAGA Editorial Director 2025–26" />
+          </div>
           <div class="component-right-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
         </div>
       </div>
@@ -303,11 +370,13 @@
       <div class="about-profile fade-in fade-left">
         <div class="about-profile-container">
           <div class="component-left-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Alicia.jpg" /></div>
-          <div class="component-bar"><img src="media/bar.svg" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Alicia.jpg" alt="Alicia, TMUTAGA Multimedia Director 2025–26" />
+          </div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
         </div>
         <div class="about-mission">
           <div class="about-profile-discription">
@@ -332,15 +401,17 @@
           </div>
           <h2>Marketing Director</h2>
           <p>
-            Heyo! I'm Jeevana, this year's Marketing & Events Director for TAGA! I'm a fourth-year GCM student completing a concentration in Packaging and a minor in Marketing. I'm so grateful to be working with amazing people and spreading the word to TMU about TAGA and all that we do!
+            Heyo! I'm Jeevana, this year's Marketing &amp; Events Director for TAGA! I'm a fourth-year GCM student completing a concentration in Packaging and a minor in Marketing. I'm so grateful to be working with amazing people and spreading the word to TMU about TAGA and all that we do!
           </p>
         </div>
         <div class="about-profile-container">
-          <div class="component-bar"><img src="media/bar.svg" /></div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Jeevana.jpg" /></div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Jeevana.jpg" alt="Jeevana, TMUTAGA Marketing Director 2025–26" />
+          </div>
           <div class="component-right-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
         </div>
       </div>
@@ -349,11 +420,13 @@
       <div class="about-profile fade-in fade-left">
         <div class="about-profile-container">
           <div class="component-left-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Krys.jpg" /></div>
-          <div class="component-bar"><img src="media/bar.svg" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Krys.jpg" alt="Krzysztof (Kris) Krystosiak, TMUTAGA Faculty Advisor" />
+          </div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
         </div>
         <div class="about-mission">
           <div class="about-profile-discription">
@@ -382,37 +455,41 @@
           </p>
         </div>
         <div class="about-profile-container">
-          <div class="component-bar"><img src="media/bar.svg" /></div>
-          <div class="about-img-profile"><img src="media/TMUTAGA_2025_web-Scott.jpg" /></div>
+          <div class="component-bar"><img src="media/bar.svg" alt="" role="presentation" /></div>
+          <div class="about-img-profile">
+            <img src="media/TMUTAGA_2025_web-Scott.jpg" alt="Scott, TMUTAGA Faculty Advisor" />
+          </div>
           <div class="component-right-corner-container">
-            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" /></div>
-            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" /></div>
+            <div class="component-tiny-arch-top"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
+            <div class="component-tiny-arch"><img src="media/component-tinyArch.svg" alt="" role="presentation" /></div>
           </div>
         </div>
       </div>
 
+      <!-- Associates -->
       <div class="about-associates">
-          <div class="about-img-associates fade-in fade-left">
-            <img id="associatesPhoto" src="media/TMUTAGA_2025_web-aliyah-eims1.jpg" alt="TMUTAGA group photo"/>
-          </div>
-        <div class="component-border fade-in fade-bottom"><img src="media/component-border.svg" /></div>
+        <div class="about-img-associates fade-in fade-left">
+          <img id="associatesPhoto" src="media/TMUTAGA_2025_web-aliyah-eims1.jpg"
+               alt="TMUTAGA 2025–26 associates team photo"/>
+        </div>
+        <div class="component-border fade-in fade-bottom">
+          <img src="media/component-border.svg" alt="" role="presentation" />
+        </div>
         <div class="about-associates-container fade-in fade-right">
           <h1>ASSOCIATES</h1>
           <div class="about-associates-grid container-fluid">
             <div class="row g-4">
-              <!-- Production -->
               <div class="col-12 col-md-4">
                 <div class="about-production-associates fade-in fade-right">
                   <h2>Production</h2>
                   <p class="caption">
+                    Rina Chong<br>
                     Andrew Whelan<br>
                     Ella Reed<br>
-                    Rina Chong<br>
                     Tara Nguyen
                   </p>
                 </div>
               </div>
-              <!-- Marketing -->
               <div class="col-12 col-md-4">
                 <div class="about-marketing-associates fade-in fade-right">
                   <h2>Marketing</h2>
@@ -424,7 +501,6 @@
                   </p>
                 </div>
               </div>
-              <!-- Multimedia -->
               <div class="col-12 col-md-4">
                 <div class="about-multimedia-associates fade-in fade-right">
                   <h2>Multimedia</h2>
@@ -434,7 +510,6 @@
                   </p>
                 </div>
               </div>
-              <!-- Creative -->
               <div class="col-12 col-md-4">
                 <div class="about-creative-associates fade-in fade-right">
                   <h2>Creative</h2>
@@ -446,7 +521,6 @@
                   </p>
                 </div>
               </div>
-              <!-- Editorial -->
               <div class="col-12 col-md-4">
                 <div class="about-editorial-associates fade-in fade-right">
                   <h2>Editorial</h2>
@@ -457,7 +531,6 @@
                   </p>
                 </div>
               </div>
-              <!-- Empty slot to keep 2x3 layout -->
               <div class="col-12 col-md-4"></div>
             </div>
           </div>
@@ -470,18 +543,14 @@
     </div>
 
     <footer class="site-footer">
-
       <div class="footer-content">
         <!-- Logo -->
-        <a href="index.html" id="logo-link" class="footer-logo">
-          <img src="media/small-logo.svg" alt="TMUTAGA" />
+        <a href="index.html" id="logo-link" class="footer-logo" aria-label="TMUTAGA Home">
+          <img src="media/small-logo.svg" alt="TMUTAGA logo" />
         </a>
-      
-        <!-- Copyright -->
         <p class="footer-copy">Copyright &copy; 2026 TMUTAGA | All rights reserved</p>
       </div>
-      
-      <img src="media/footer.svg" alt="Footer decoration" class="footer-bg-svg" />
+      <img src="media/footer.webp" alt="" role="presentation" class="footer-bg-svg" />
     </footer>
   </body>
 </html>
