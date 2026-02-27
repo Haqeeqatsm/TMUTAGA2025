@@ -627,7 +627,6 @@ li{
   padding: 50px 30px 50px 30px;
   display: flex;
   flex-direction: row;
-  gap: 50px;
   align-items: center;
   justify-content: center;
   align-self: stretch;
@@ -689,6 +688,7 @@ li{
 }
 .component-bar {
   height: 100%;
+  padding: 0% 5% 0% 5%;
 }
 .about-associates {
   padding: 5% 3% 5% 3%;
@@ -1260,27 +1260,38 @@ li{
   overflow: visible; /* Allow overflow */
 }
 
-.component-left-corner-container,
-.component-right-corner-container {
+.component-left-corner-container-donors,
+.component-right-corner-container-donors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+
   flex-shrink: 0;
   position: relative;
   z-index: 1;
 }
 
-.component-left-corner-container {
+.component-left-corner-container-donors {
   margin-right: -30px; /* Overlap inward on mobile */
 }
 
-.component-right-corner-container {
+.component-right-corner-container-donors {
+  transform: scaleX(-1);
   margin-left: -30px; /* Overlap inward on mobile */
 }
 
-.component-tiny-arch img,
-.component-tiny-arch-top img {
+.component-tiny-arch-donors img,
+.component-tiny-arch-top-donors img {
   width: 15vw; /* Bigger on mobile */
   max-width: 80px; /* Max size on desktop */
   height: auto;
   display: block;
+}
+
+.component-tiny-arch-top-donors img{
+  transform: scaleY(-1);
 }
 
 .join-us{
