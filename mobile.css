@@ -440,10 +440,6 @@ li{
     width: 40%;
   }
 
-  .join-us-container {
-    flex-direction: column;
-  }
-
   .theses-nav{
     display: none;
   }
