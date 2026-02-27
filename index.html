@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TMUTAGA</title>
+
+    <!-- ===================== SEO: TITLE & META ===================== -->
+    <title>TMUTAGA 2026 | Toronto Metropolitan University TAGA Student Chapter</title>
+    <meta name="description" content="TMUTAGA is Toronto Metropolitan University's official TAGA student chapter. We produce a journal showcasing thesis research from TMU's Graphic Communications Management (GCM) graduating class. TAGA's only Canadian chapter since 2006." />
+    <meta name="keywords" content="TMUTAGA, TAGA 2026, TMU TAGA, Toronto Metropolitan University, Graphic Communications Management, GCM thesis journal, student research journal, TAGA Canada" />
+    <meta name="author" content="TMUTAGA" />
+    <link rel="canonical" href="https://tmutaga.ca/" />
+
+    <!-- ===================== SEO: OPEN GRAPH (Social / Google) ===================== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TMUTAGA 2026 | TMU's TAGA Student Chapter" />
+    <meta property="og:description" content="TMUTAGA is Toronto Metropolitan University's official TAGA student chapter, producing a GCM thesis research journal since 2006. Read the 2026 digital journal now." />
+    <meta property="og:url" content="https://tmutaga.ca/" />
+    <meta property="og:image" content="https://tmutaga.ca/media/2026-cover.jpg" />
+    <meta property="og:site_name" content="TMUTAGA" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- ===================== SEO: TWITTER CARD ===================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TMUTAGA 2026 | TMU's TAGA Student Chapter" />
+    <meta name="twitter:description" content="TMUTAGA is Toronto Metropolitan University's official TAGA student chapter. Read our 2026 GCM thesis research journal." />
+    <meta name="twitter:image" content="https://tmutaga.ca/media/2026-cover.jpg" />
+
+    <!-- ===================== SEO: STRUCTURED DATA (Schema.org) ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "StudentGroup",
+      "name": "TMUTAGA",
+      "alternateName": "Toronto Metropolitan University TAGA Chapter",
+      "url": "https://tmutaga.ca",
+      "logo": "https://tmutaga.ca/media/small-logo.svg",
+      "description": "TMUTAGA is the official TAGA student chapter at Toronto Metropolitan University, producing an annual journal of Graphic Communications Management (GCM) thesis research since 2006.",
+      "foundingDate": "2006",
+      "email": "tmutaga@torontomu.ca",
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "Toronto Metropolitan University",
+        "url": "https://www.torontomu.ca"
+      },
+      "sameAs": [
+        "https://www.instagram.com/tmutaga/",
+        "https://www.tiktok.com/@tmutaga",
+        "https://www.linkedin.com/company/tmutaga/"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "TMUTAGA 2026 Journal",
+      "url": "https://tmutaga.ca/media/TMUTAGA2026_DigitalJournal.pdf",
+      "image": "https://tmutaga.ca/media/2026-cover.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "TMUTAGA"
+      },
+      "datePublished": "2026",
+      "description": "The TMUTAGA 2026 annual journal showcasing thesis research papers from the Graphic Communications Management graduating class at Toronto Metropolitan University.",
+      "inLanguage": "en-CA"
+    }
+    </script>
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./vars.css" />
@@ -26,21 +89,15 @@
       <span class="logo-gradient">TMUTAGA</span>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
       <div class="container-fluid">
-        <!-- Small logo (fades in from right when sticky) -->
         <a href="index.html" id="logo-link" class="navbar-logo-small">
-          <img src="media/small-logo.svg" alt="TMUTAGA" id="logo">
+          <img src="media/small-logo.svg" alt="TMUTAGA Home" id="logo-small">
         </a>
-
-
-        <!-- Toggler button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav text-center">
             <li class="nav-item">
@@ -68,28 +125,36 @@
       
         <!-- LEFT: Journal CTA -->
         <div class="home-hero-col home-hero-cta">
+          <!-- h1 used once on page — kept here as primary keyword heading -->
           <h1>TMUTAGA 2026 Journal</h1>
           <p class="home-hero-read-now">Read Now:</p>
           <div class="cover-img-container">
-            <a href="media/TMUTAGA2026_DigitalJournal.pdf" target="_blank" rel="noopener">
-              <img src="media/2026-cover.jpg" class="cover-img img-fluid rounded" alt="2026 Journal Cover">
+            <a href="media/TMUTAGA2026_DigitalJournal.pdf" target="_blank" rel="noopener"
+               aria-label="Read the TMUTAGA 2026 Digital Journal PDF">
+              <img src="media/2026-cover.jpg" class="cover-img img-fluid rounded"
+                   alt="TMUTAGA 2026 Journal Cover — Graphic Communications Management Thesis Research">
             </a>
           </div>
         </div>
       
-        <!-- RIGHT: Floral + Text + Floral -->
+        <!-- RIGHT: Description -->
         <div class="home-hero-col home-hero-text-col">
         
-          <div class="component-long-frame component-long-frame-home"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame component-long-frame-home">
+            <img src="media/component-longFrame.svg" alt="" role="presentation" />
+          </div>
         
           <div class="home-hero-text fade-in fade-right">
-            <h1>TAGA's one and only Canadian chapter since 2006.</h1>
+            <!-- Changed to h2 since h1 is already used above -->
+            <h2>TAGA's one and only Canadian chapter since 2006.</h2>
             <p>
               TMUTAGA is a team of students from the Graphic Communications Management (GCM) program at Toronto Metropolitan University. We create and produce a journal that highlights our team's creative and technical skills while showcasing thesis research papers from our very own graduating class.
             </p>
           </div>
         
-          <div class="component-long-frame-flipped component-long-frame-home"><img src="media/component-longFrame.svg" /></div>
+          <div class="component-long-frame-flipped component-long-frame-home">
+            <img src="media/component-longFrame.svg" alt="" role="presentation" />
+          </div>
         
         </div>
       
@@ -101,46 +166,47 @@
     </div>
 
     <div class="home-instagram-feed">
-      <h1 class="fade-in fade-left">What we’re up to</h1> 
+      <h2 class="fade-in fade-left">What we're up to</h2> 
       <div class="component-gradient-line fade-in fade-left"></div>
       <div class="component-gallery fade-in fade-bottom">
-      		<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/6ace2b41d98750dfa01a7f949f5422bb.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe src="//lightwidget.com/widgets/6ace2b41d98750dfa01a7f949f5422bb.html"
+                scrolling="no" allowtransparency="true" class="lightwidget-widget"
+                style="width:100%;border:0;overflow:hidden;"
+                title="TMUTAGA Instagram Feed"></iframe>
       </div>
     </div>
+
     <div class="component-socials fade-in fade-top">
-    	<h1>Our Socials</h1>
+    	<h2>Our Socials</h2>
     	<div class="social-icons">
-        <a href="https://www.instagram.com/tmutaga/" target="_blank" rel="noopener" class="icons instagram">
-          <img src="media/Instagram.png" alt="Instagram Icon">
+        <a href="https://www.instagram.com/tmutaga/" target="_blank" rel="noopener" class="icons instagram"
+           aria-label="TMUTAGA on Instagram">
+          <img src="media/Instagram.png" alt="Instagram">
         </a>      
-
-        <a href="https://www.tiktok.com/@tmutaga" target="_blank" rel="noopener" class="icons tiktok">
-          <img src="media/TikTok.png" alt="TikTok Icon">
+        <a href="https://www.tiktok.com/@tmutaga" target="_blank" rel="noopener" class="icons tiktok"
+           aria-label="TMUTAGA on TikTok">
+          <img src="media/TikTok.png" alt="TikTok">
         </a>      
-
-        <a href="https://www.linkedin.com/company/tmutaga/?originalSubdomain=ca" target="_blank" rel="noopener" class="icons linkedin">
-          <img src="media/LinkedIn.png" alt="LinkedIn Icon">
+        <a href="https://www.linkedin.com/company/tmutaga/?originalSubdomain=ca" target="_blank" rel="noopener" class="icons linkedin"
+           aria-label="TMUTAGA on LinkedIn">
+          <img src="media/LinkedIn.png" alt="LinkedIn">
         </a>      
-
-        <a href="mailto:tmutaga@torontomu.ca" class="icons email">
-          <img src="media/Email.png" alt="Email Icon">
+        <a href="mailto:tmutaga@torontomu.ca" class="icons email"
+           aria-label="Email TMUTAGA">
+          <img src="media/Email.png" alt="Email">
         </a>
       </div>
     </div>
    
     <footer class="site-footer">
-
       <div class="footer-content">
-        <!-- Logo -->
-        <a href="index.html" class="footer-logo">
-          <img src="media/small-logo.svg" alt="TMUTAGA" />
+        <a href="index.html" class="footer-logo" aria-label="TMUTAGA Home">
+          <img src="media/small-logo.svg" alt="TMUTAGA logo" />
         </a>
-      
-        <!-- Copyright -->
         <p class="footer-copy">Copyright &copy; 2026 TMUTAGA | All rights reserved</p>
       </div>
-      
-      <img src="media/footer.webp" alt="Footer decoration" class="footer-bg-svg" />
+      <img src="media/footer.webp" alt="" role="presentation" class="footer-bg-svg" />
     </footer>
 
 </body>
