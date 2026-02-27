@@ -399,6 +399,7 @@ li{
   align-items: center;
   padding: 5%;
   gap: 3vh;
+  width: 100vw;
 }
 .social-icons {
   display: flex;
