@@ -335,12 +335,64 @@ li{
 
 
 /*Index Section */
-.homepage-hero {
+.homepage-hero{
+  padding: 5%;
+}
+.home-hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-hero-col {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 10% 5% 0 5%;
+  flex: 1;
 }
+
+.home-hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home-hero-cta .cover-img-container {
+  width: 50%;
+}
+
+.home-hero-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.home-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-hero-floral {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-hero-floral img {
+  height: 20vh;
+}
+
+.component-long-frame-home img{
+  width: 100%;
+}
+
 .component-socials {
   display: flex;
   flex-direction: column;
@@ -385,10 +437,6 @@ li{
   display: flex;
   flex-direction: column;
   gap: 1vh;
-}
-
-.home-hero-text{
-  text-align: right;
 }
 
 /* About Us Section */
