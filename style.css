@@ -362,7 +362,6 @@ li{
 .home-hero-cta .cover-img-container {
   width: 50%;
 }
-
 .home-hero-text-col {
   display: flex;
   flex-direction: column;
@@ -1550,3 +1549,4 @@ li{
   user-select: none;
   z-index: 10; /* Added */
 }
+
