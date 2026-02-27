@@ -1330,6 +1330,7 @@ li{
   overflow: hidden;
   transition: all 0.4s ease;
   box-shadow: none; /* default no glow */
+  text-decoration: none;
 }
 
 /* Outer glow on hover */
