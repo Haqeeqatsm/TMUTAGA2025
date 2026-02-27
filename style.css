@@ -1463,8 +1463,6 @@ li{
   width: 30vw;
   aspect-ratio: 1 / 1;
   float: right;
-  margin-left: 34px;
-  margin-bottom: 20px;
   shape-outside: margin-box;
   overflow: hidden;
   cursor: pointer;
