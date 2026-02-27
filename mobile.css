@@ -412,6 +412,11 @@ li{
     align-content: center;
   }
 
+  .home-hero-inner{
+    flex-direction: column;
+    gap: 10vh;
+  }
+
 }
 @media (max-width: 576px) {
   .navbar {
