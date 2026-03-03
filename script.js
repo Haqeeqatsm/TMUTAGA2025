@@ -397,10 +397,23 @@ setTimeout(() => {
   if (!container) return;
 
   const images = [
-    "media/TMUTAGA_2025_web-aliyah-eims1.jpg",
-    "media/TMUTAGA_2025_web-aliyah-eims2.jpg",
-    "media/TMUTAGA_2025_web-scott-krys.jpg",
-    "media/TMUTAGA_2025_web-alicia-mathew.jpg"
+    "media/Photo1_Thomson.JPG",
+    "media/Photo1_Hatoum.jpg",
+    "media/Photo1_Williams.JPEG",
+    "media/Photo1_Bhiwandiwala.jpeg",
+    "media/IMG_1820.jpg",
+    "media/IvanaVukmirovic2.jpg",
+    "media/Uniba.jpg",
+    "media/Photo1_Caruana.jpg",
+    "media/Photo1_Elangovan.jpg",
+    "media/Photo1-Dhillon.jpg",
+    "media/Photo1_Patel.jpg",
+    "media/Photo1_SinghMangat.JPG",
+    "media/Photo1El-Hayek.JPG",
+    "media/Photo1_Whelan.JPG",
+    "media/Photo1_Reed.JPG",
+    "media/rina.jpg",
+    "media/Photo1_Nguyen.JPG"
   ];
 
   let photoIndex = 0;
